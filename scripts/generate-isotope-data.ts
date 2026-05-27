@@ -132,13 +132,13 @@ const calculateBaseLifetime = (
   halfLifeSeconds: number,
   maxHalfLife: number
 ) => {
-  if (!Number.isFinite(halfLifeSeconds)) return 30;
+  if (!Number.isFinite(halfLifeSeconds)) return 20;
   if (halfLifeSeconds <= 0) return 0;
   const normalized =
     Math.log10(halfLifeSeconds + 1) / Math.log10(maxHalfLife + 1);
   const scaled =
     (Math.exp(3 * normalized) - 1) / (Math.exp(3) - 1);
-  return Number((30 * scaled).toFixed(3));
+  return Number((20 * scaled).toFixed(3));
 };
 
 const isStableNuclide = (row: RawNuclide) =>

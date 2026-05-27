@@ -25,7 +25,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 0,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   2: {
     symbol: "He",
@@ -36,7 +36,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 2,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   3: {
     symbol: "Li",
@@ -47,7 +47,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 4,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   4: {
     symbol: "Be",
@@ -58,7 +58,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 5,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   5: {
     symbol: "B",
@@ -69,7 +69,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 6,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   6: {
     symbol: "C",
@@ -80,7 +80,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 6,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   7: {
     symbol: "N",
@@ -91,7 +91,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 7,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   8: {
     symbol: "O",
@@ -102,7 +102,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 8,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   9: {
     symbol: "F",
@@ -113,7 +113,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 10,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   10: {
     symbol: "Ne",
@@ -124,7 +124,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 10,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   11: {
     symbol: "Na",
@@ -135,7 +135,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 12,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   12: {
     symbol: "Mg",
@@ -146,7 +146,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 12,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   13: {
     symbol: "Al",
@@ -157,7 +157,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 14,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   14: {
     symbol: "Si",
@@ -168,7 +168,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 14,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   15: {
     symbol: "P",
@@ -179,7 +179,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 16,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   16: {
     symbol: "S",
@@ -190,7 +190,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 16,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   17: {
     symbol: "Cl",
@@ -201,7 +201,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 18,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   18: {
     symbol: "Ar",
@@ -212,7 +212,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 22,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   19: {
     symbol: "K",
@@ -223,7 +223,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 20,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   20: {
     symbol: "Ca",
@@ -234,7 +234,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 20,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   21: {
     symbol: "Sc",
@@ -245,7 +245,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 24,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   22: {
     symbol: "Ti",
@@ -256,7 +256,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 26,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   23: {
     symbol: "V",
@@ -267,7 +267,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 28,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   24: {
     symbol: "Cr",
@@ -278,7 +278,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 28,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   25: {
     symbol: "Mn",
@@ -289,7 +289,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 30,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   26: {
     symbol: "Fe",
@@ -300,7 +300,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 30,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   27: {
     symbol: "Co",
@@ -311,7 +311,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 32,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   28: {
     symbol: "Ni",
@@ -322,7 +322,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 30,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   29: {
     symbol: "Cu",
@@ -333,7 +333,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 34,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   30: {
     symbol: "Zn",
@@ -344,7 +344,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 34,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   31: {
     symbol: "Ga",
@@ -355,7 +355,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 38,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   32: {
     symbol: "Ge",
@@ -366,7 +366,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 42,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   33: {
     symbol: "As",
@@ -377,7 +377,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 42,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   34: {
     symbol: "Se",
@@ -388,7 +388,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 46,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   35: {
     symbol: "Br",
@@ -399,7 +399,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 44,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   36: {
     symbol: "Kr",
@@ -410,7 +410,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 48,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   37: {
     symbol: "Rb",
@@ -421,7 +421,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 48,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   38: {
     symbol: "Sr",
@@ -432,7 +432,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 50,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   39: {
     symbol: "Y",
@@ -443,7 +443,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 50,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   40: {
     symbol: "Zr",
@@ -454,7 +454,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 50,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   41: {
     symbol: "Nb",
@@ -465,7 +465,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 52,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   42: {
     symbol: "Mo",
@@ -476,7 +476,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 56,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   43: {
     symbol: "Tc",
@@ -487,7 +487,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 54,
     halfLifeSeconds: 132857496000000,
     stabilityRank: 44,
-    baseLifetimeSeconds: 4.373,
+    baseLifetimeSeconds: 2.915,
   },
   44: {
     symbol: "Ru",
@@ -498,7 +498,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 58,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   45: {
     symbol: "Rh",
@@ -509,7 +509,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 58,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   46: {
     symbol: "Pd",
@@ -520,7 +520,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 60,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   47: {
     symbol: "Ag",
@@ -531,7 +531,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 60,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   48: {
     symbol: "Cd",
@@ -542,7 +542,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 66,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   49: {
     symbol: "In",
@@ -553,7 +553,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 64,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   50: {
     symbol: "Sn",
@@ -564,7 +564,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 70,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   51: {
     symbol: "Sb",
@@ -575,7 +575,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 70,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   52: {
     symbol: "Te",
@@ -586,7 +586,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 74,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   53: {
     symbol: "I",
@@ -597,7 +597,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 74,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   54: {
     symbol: "Xe",
@@ -608,7 +608,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 78,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   55: {
     symbol: "Cs",
@@ -619,7 +619,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 78,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   56: {
     symbol: "Ba",
@@ -630,7 +630,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 82,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   57: {
     symbol: "La",
@@ -641,7 +641,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 82,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   58: {
     symbol: "Ce",
@@ -652,7 +652,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 82,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   59: {
     symbol: "Pr",
@@ -663,7 +663,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 82,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   60: {
     symbol: "Nd",
@@ -674,7 +674,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 82,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   61: {
     symbol: "Pm",
@@ -685,7 +685,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 84,
     halfLifeSeconds: 558569520,
     stabilityRank: 27,
-    baseLifetimeSeconds: 2.011,
+    baseLifetimeSeconds: 1.341,
   },
   62: {
     symbol: "Sm",
@@ -696,7 +696,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 90,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   63: {
     symbol: "Eu",
@@ -707,7 +707,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 90,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   64: {
     symbol: "Gd",
@@ -718,7 +718,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 94,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   65: {
     symbol: "Tb",
@@ -729,7 +729,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 94,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   66: {
     symbol: "Dy",
@@ -740,7 +740,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 98,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   67: {
     symbol: "Ho",
@@ -751,7 +751,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 98,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   68: {
     symbol: "Er",
@@ -762,7 +762,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 98,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   69: {
     symbol: "Tm",
@@ -773,7 +773,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 100,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   70: {
     symbol: "Yb",
@@ -784,7 +784,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 104,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   71: {
     symbol: "Lu",
@@ -795,7 +795,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 104,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   72: {
     symbol: "Hf",
@@ -806,7 +806,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 108,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   73: {
     symbol: "Ta",
@@ -817,7 +817,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 108,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   74: {
     symbol: "W",
@@ -828,7 +828,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 110,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   75: {
     symbol: "Re",
@@ -839,7 +839,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 110,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   76: {
     symbol: "Os",
@@ -850,7 +850,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 116,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   77: {
     symbol: "Ir",
@@ -861,7 +861,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 116,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   78: {
     symbol: "Pt",
@@ -872,7 +872,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 117,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   79: {
     symbol: "Au",
@@ -883,7 +883,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 118,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   80: {
     symbol: "Hg",
@@ -894,7 +894,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 122,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   81: {
     symbol: "Tl",
@@ -905,7 +905,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 124,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   82: {
     symbol: "Pb",
@@ -916,7 +916,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 126,
     halfLifeSeconds: Number.POSITIVE_INFINITY,
     stabilityRank: 100,
-    baseLifetimeSeconds: 30,
+    baseLifetimeSeconds: 20,
   },
   83: {
     symbol: "Bi",
@@ -927,7 +927,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 126,
     halfLifeSeconds: 6.3430776e+26,
     stabilityRank: 84,
-    baseLifetimeSeconds: 18.051,
+    baseLifetimeSeconds: 12.034,
   },
   84: {
     symbol: "Po",
@@ -938,7 +938,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 125,
     halfLifeSeconds: 3913142400,
     stabilityRank: 30,
-    baseLifetimeSeconds: 2.308,
+    baseLifetimeSeconds: 1.539,
   },
   85: {
     symbol: "At",
@@ -949,7 +949,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 125,
     halfLifeSeconds: 29160,
     stabilityRank: 14,
-    baseLifetimeSeconds: 0.822,
+    baseLifetimeSeconds: 0.548,
   },
   86: {
     symbol: "Rn",
@@ -960,7 +960,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 136,
     halfLifeSeconds: 330177.6,
     stabilityRank: 17,
-    baseLifetimeSeconds: 1.072,
+    baseLifetimeSeconds: 0.714,
   },
   87: {
     symbol: "Fr",
@@ -971,7 +971,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 136,
     halfLifeSeconds: 1320,
     stabilityRank: 10,
-    baseLifetimeSeconds: 0.537,
+    baseLifetimeSeconds: 0.358,
   },
   88: {
     symbol: "Ra",
@@ -982,7 +982,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 138,
     halfLifeSeconds: 50492160000,
     stabilityRank: 34,
-    baseLifetimeSeconds: 2.736,
+    baseLifetimeSeconds: 1.824,
   },
   89: {
     symbol: "Ac",
@@ -993,7 +993,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 138,
     halfLifeSeconds: 687072067.1999999,
     stabilityRank: 28,
-    baseLifetimeSeconds: 2.041,
+    baseLifetimeSeconds: 1.361,
   },
   90: {
     symbol: "Th",
@@ -1004,7 +1004,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 142,
     halfLifeSeconds: 441806400000000000,
     stabilityRank: 55,
-    baseLifetimeSeconds: 6.711,
+    baseLifetimeSeconds: 4.474,
   },
   91: {
     symbol: "Pa",
@@ -1015,7 +1015,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 140,
     halfLifeSeconds: 1030355640000,
     stabilityRank: 38,
-    baseLifetimeSeconds: 3.301,
+    baseLifetimeSeconds: 2.201,
   },
   92: {
     symbol: "U",
@@ -1026,7 +1026,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 146,
     halfLifeSeconds: 140841568800000000,
     stabilityRank: 54,
-    baseLifetimeSeconds: 6.333,
+    baseLifetimeSeconds: 4.222,
   },
   93: {
     symbol: "Np",
@@ -1037,7 +1037,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 144,
     halfLifeSeconds: 67659494400000,
     stabilityRank: 43,
-    baseLifetimeSeconds: 4.211,
+    baseLifetimeSeconds: 2.807,
   },
   94: {
     symbol: "Pu",
@@ -1048,7 +1048,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 150,
     halfLifeSeconds: 2565632880000000,
     stabilityRank: 48,
-    baseLifetimeSeconds: 5.138,
+    baseLifetimeSeconds: 3.426,
   },
   95: {
     symbol: "Am",
@@ -1059,7 +1059,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 148,
     halfLifeSeconds: 231948360000,
     stabilityRank: 36,
-    baseLifetimeSeconds: 3.013,
+    baseLifetimeSeconds: 2.009,
   },
   96: {
     symbol: "Cm",
@@ -1070,7 +1070,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 151,
     halfLifeSeconds: 492298560000000,
     stabilityRank: 46,
-    baseLifetimeSeconds: 4.7,
+    baseLifetimeSeconds: 3.133,
   },
   97: {
     symbol: "Bk",
@@ -1081,7 +1081,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 150,
     halfLifeSeconds: 43549488000,
     stabilityRank: 33,
-    baseLifetimeSeconds: 2.71,
+    baseLifetimeSeconds: 1.806,
   },
   98: {
     symbol: "Cf",
@@ -1092,7 +1092,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 153,
     halfLifeSeconds: 28338724800,
     stabilityRank: 33,
-    baseLifetimeSeconds: 2.635,
+    baseLifetimeSeconds: 1.757,
   },
   99: {
     symbol: "Es",
@@ -1103,7 +1103,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 153,
     halfLifeSeconds: 40754880,
     stabilityRank: 24,
-    baseLifetimeSeconds: 1.647,
+    baseLifetimeSeconds: 1.098,
   },
   100: {
     symbol: "Fm",
@@ -1114,7 +1114,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 157,
     halfLifeSeconds: 8683200,
     stabilityRank: 22,
-    baseLifetimeSeconds: 1.45,
+    baseLifetimeSeconds: 0.967,
   },
   101: {
     symbol: "Md",
@@ -1125,7 +1125,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 157,
     halfLifeSeconds: 4457376,
     stabilityRank: 21,
-    baseLifetimeSeconds: 1.368,
+    baseLifetimeSeconds: 0.912,
   },
   102: {
     symbol: "No",
@@ -1136,7 +1136,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 157,
     halfLifeSeconds: 3480,
     stabilityRank: 11,
-    baseLifetimeSeconds: 0.622,
+    baseLifetimeSeconds: 0.415,
   },
   103: {
     symbol: "Lr",
@@ -1147,7 +1147,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 163,
     halfLifeSeconds: 39600,
     stabilityRank: 14,
-    baseLifetimeSeconds: 0.852,
+    baseLifetimeSeconds: 0.568,
   },
   104: {
     symbol: "Rf",
@@ -1158,7 +1158,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 163,
     halfLifeSeconds: 2880,
     stabilityRank: 11,
-    baseLifetimeSeconds: 0.605,
+    baseLifetimeSeconds: 0.404,
   },
   105: {
     symbol: "Db",
@@ -1169,7 +1169,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 163,
     halfLifeSeconds: 57600,
     stabilityRank: 15,
-    baseLifetimeSeconds: 0.889,
+    baseLifetimeSeconds: 0.593,
   },
   106: {
     symbol: "Sg",
@@ -1180,7 +1180,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 163,
     halfLifeSeconds: 780,
     stabilityRank: 9,
-    baseLifetimeSeconds: 0.492,
+    baseLifetimeSeconds: 0.328,
   },
   107: {
     symbol: "Bh",
@@ -1191,7 +1191,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 171,
     halfLifeSeconds: 690,
     stabilityRank: 9,
-    baseLifetimeSeconds: 0.482,
+    baseLifetimeSeconds: 0.321,
   },
   108: {
     symbol: "Hs",
@@ -1202,7 +1202,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 163,
     halfLifeSeconds: 46,
     stabilityRank: 5,
-    baseLifetimeSeconds: 0.268,
+    baseLifetimeSeconds: 0.179,
   },
   109: {
     symbol: "Mt",
@@ -1213,7 +1213,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 173,
     halfLifeSeconds: 67,
     stabilityRank: 6,
-    baseLifetimeSeconds: 0.296,
+    baseLifetimeSeconds: 0.197,
   },
   110: {
     symbol: "Ds",
@@ -1224,7 +1224,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 172,
     halfLifeSeconds: 67,
     stabilityRank: 6,
-    baseLifetimeSeconds: 0.296,
+    baseLifetimeSeconds: 0.197,
   },
   111: {
     symbol: "Rg",
@@ -1235,7 +1235,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 175,
     halfLifeSeconds: 642,
     stabilityRank: 9,
-    baseLifetimeSeconds: 0.476,
+    baseLifetimeSeconds: 0.317,
   },
   112: {
     symbol: "Cn",
@@ -1246,7 +1246,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 173,
     halfLifeSeconds: 28,
     stabilityRank: 5,
-    baseLifetimeSeconds: 0.232,
+    baseLifetimeSeconds: 0.155,
   },
   113: {
     symbol: "Nh",
@@ -1257,7 +1257,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 173,
     halfLifeSeconds: 9.5,
     stabilityRank: 4,
-    baseLifetimeSeconds: 0.159,
+    baseLifetimeSeconds: 0.106,
   },
   114: {
     symbol: "Fl",
@@ -1268,7 +1268,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 176,
     halfLifeSeconds: 19,
     stabilityRank: 5,
-    baseLifetimeSeconds: 0.205,
+    baseLifetimeSeconds: 0.137,
   },
   115: {
     symbol: "Mc",
@@ -1279,7 +1279,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 175,
     halfLifeSeconds: 0.65,
     stabilityRank: 3,
-    baseLifetimeSeconds: 0.033,
+    baseLifetimeSeconds: 0.022,
   },
   116: {
     symbol: "Lv",
@@ -1290,7 +1290,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 177,
     halfLifeSeconds: 0.057,
     stabilityRank: 3,
-    baseLifetimeSeconds: 0.004,
+    baseLifetimeSeconds: 0.002,
   },
   117: {
     symbol: "Ts",
@@ -1301,7 +1301,7 @@ export const isotopeData: Record<number, {
     preferredStableNeutrons: 177,
     halfLifeSeconds: 0.051000000000000004,
     stabilityRank: 3,
-    baseLifetimeSeconds: 0.003,
+    baseLifetimeSeconds: 0.002,
   },
   118: {
     symbol: "Og",

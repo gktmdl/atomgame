@@ -1,10 +1,7 @@
 import { isotopeData } from "@/data/isotopes";
 
-const clamp = (value: number, min: number, max: number) =>
-  Math.min(Math.max(value, min), max);
-
 const SCORE_MAX_VALUE = 1_000_000_000;
-const SCORE_REFERENCE_SECONDS = 30;
+const SCORE_REFERENCE_SECONDS = 20;
 const SCORE_CURVE_EXPONENT = 3;
 const POISSON_NOISE_LAMBDA = 400;
 
@@ -77,7 +74,7 @@ export const formatChargedAtomLabel = (
 export const calculateScore = (survivalSeconds: number) => {
   if (!Number.isFinite(survivalSeconds) || survivalSeconds <= 0) return 0;
 
-  const progress = clamp(survivalSeconds / SCORE_REFERENCE_SECONDS, 0, 1);
+  const progress = survivalSeconds / SCORE_REFERENCE_SECONDS;
   const shaped = Math.pow(progress, SCORE_CURVE_EXPONENT);
   return Math.round(SCORE_MAX_VALUE * shaped);
 };
