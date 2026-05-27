@@ -3,6 +3,23 @@ import { collection, query, orderBy, limit, onSnapshot, addDoc } from "firebase/
 import { db } from "@/lib/firebase";
 import { ScoreEntry } from "@/types";
 
+const GUEST_ID_STORAGE_KEY = "atomgame-guest-id";
+
+const getOrCreateGuestId = () => {
+  if (typeof window === "undefined") {
+    return "Guest-unknown";
+  }
+
+  const storedGuestId = window.localStorage.getItem(GUEST_ID_STORAGE_KEY);
+  if (storedGuestId) {
+    return storedGuestId;
+  }
+
+  const guestId = `Guest-${Math.floor(1000 + Math.random() * 9000)}`;
+  window.localStorage.setItem(GUEST_ID_STORAGE_KEY, guestId);
+  return guestId;
+};
+
 export function useScores() {
   const [scores, setScores] = useState<ScoreEntry[]>([]);
   const [recentFails, setRecentFails] = useState<ScoreEntry[]>([]);
@@ -46,13 +63,18 @@ export function useScores() {
 
   const submitScore = async (entry: Omit<ScoreEntry, "id" | "createdAt" | "guestId" | "playerName">) => {
     const playerName = localStorage.getItem("atom_player_name") || "Unknown";
+    const guestId = getOrCreateGuestId();
+    const createdAt = Date.now();
+    const scorePayload = {
+      ...entry,
+      guestId,
+      playerName,
+      createdAt,
+    };
 
     try {
-      await addDoc(collection(db, "scores"), {
-        ...entry,
-        playerName,
-        createdAt: Date.now(),
-      });
+      console.debug("Submitting Firestore score", scorePayload);
+      await addDoc(collection(db, "scores"), scorePayload);
     } catch (error) {
       console.error("Error adding document: ", error);
     }
