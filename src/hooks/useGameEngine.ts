@@ -7,6 +7,7 @@ import {
   calculateInstabilityMultiplier,
   calculateScore,
 } from "@/lib/isotope-utils";
+import { getElementLifetimeScale } from "@/lib/stability-tiers";
 
 export function useGameEngine() {
   const [gameState, setGameState] = useState<GameState>({
@@ -91,7 +92,7 @@ export function useGameEngine() {
       finalLifetime = calculateFinalLifetime(
         data.baseLifetimeSeconds || 0,
         instabilityMultiplier
-      );
+      ) * getElementLifetimeScale(data.symbol);
 
       if (!data.stableNeutrons.includes(gameState.neutron)) {
         resultType = "nuclear_decay";
