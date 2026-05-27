@@ -23,15 +23,26 @@ interface ElectronState {
 export function AtomVisualizer({ proton, neutron, electron, isDead, isPlaying }: AtomVisualizerProps) {
   // Nucleus Packing - Using a more spread out cluster approach
   const nucleusParticles = useMemo(() => {
-    const particles = [];
     const total = proton + neutron;
     
+    // Create a shuffled list of particle types
+    const types = [
+      ...Array(proton).fill("proton"),
+      ...Array(neutron).fill("neutron")
+    ];
+    
+    for (let i = types.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [types[i], types[j]] = [types[j], types[i]];
+    }
+
+    const particles = [];
     // Golden spiral in 3D-ish space for better packing
     const spacing = 6; 
     const phi = (Math.sqrt(5) + 1) / 2;
 
     for (let i = 0; i < total; i++) {
-      const type = i < proton ? "proton" : "neutron";
+      const type = types[i];
       
       // Vogel's model for disk packing - more compact
       const r = Math.sqrt(i + 0.5) * spacing;
@@ -44,12 +55,6 @@ export function AtomVisualizer({ proton, neutron, electron, isDead, isPlaying }:
         y: Math.sin(theta) * r,
         z: (Math.random() - 0.5) * r * 0.5, // Some depth
       });
-    }
-
-    // Shuffle
-    for (let i = particles.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [particles[i], particles[j]] = [particles[j], particles[i]];
     }
 
     return particles;

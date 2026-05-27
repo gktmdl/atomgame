@@ -30,7 +30,7 @@ export function useGameEngine() {
       ...prev,
       proton: clamped,
       neutron: data ? data.stableNeutrons : prev.neutron,
-      electron: clamped, // Auto-balance electrons to make it easier to start
+      // Removed electron synchronization for educational purposes
       statusMessage: "원자를 구성하고 START를 누르세요.",
     }));
   }, [gameState.isPlaying, gameState.isDead]);
@@ -68,7 +68,7 @@ export function useGameEngine() {
       message = "존재하지 않는 원소입니다.";
     } else if (gameState.electron !== gameState.proton) {
       initialDead = true;
-      message = "전하가 불안정하여 원자가 즉시 붕괴했습니다.";
+      message = "전하가 불안정하여 원자가 유지되지 못했습니다.";
     } else {
       const baseLifetime = data.baseLifetimeSeconds || 0;
       const instabilityMultiplier = Math.pow(3, Math.abs(gameState.neutron - data.stableNeutrons));
