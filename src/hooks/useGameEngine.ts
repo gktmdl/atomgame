@@ -19,6 +19,7 @@ export function useGameEngine() {
     electron: 1,
     statusMessage: "원자를 구성하고 시작을 누르세요.",
     isDead: false,
+    resultType: undefined,
   });
 
   const { submitScore } = useScores();
@@ -115,6 +116,7 @@ export function useGameEngine() {
         survivalTime: 0,
         score: 0,
         statusMessage: message,
+        resultType,
       }));
       submitScore({
         score: 0,
@@ -136,6 +138,7 @@ export function useGameEngine() {
       score: 0,
       survivalTime: 0,
       statusMessage: message,
+      resultType: undefined,
     }));
     startTimeRef.current = performance.now();
   }, [gameState, submitScore]);
@@ -148,6 +151,7 @@ export function useGameEngine() {
       score: 0,
       survivalTime: 0,
       statusMessage: "원자를 구성하고 시작을 누르세요.",
+      resultType: undefined,
     }));
     if (requestRef.current) {
       cancelAnimationFrame(requestRef.current);
@@ -181,6 +185,7 @@ export function useGameEngine() {
         survivalTime: finalSurvival,
         score: finalScore,
         statusMessage: endMessage,
+        resultType,
       }));
 
       submitScore({

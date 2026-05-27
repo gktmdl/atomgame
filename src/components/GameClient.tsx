@@ -77,6 +77,7 @@ export function GameClient() {
               electron={gameState.electron}
               isDead={gameState.isDead}
               isPlaying={gameState.isPlaying}
+              resultType={gameState.resultType}
             />
             
             <div className="absolute top-6 left-6 right-6 flex justify-end items-start pointer-events-none">
@@ -89,7 +90,11 @@ export function GameClient() {
             {/* Status Message */}
             <div className="absolute bottom-6 left-6 right-6 pointer-events-none flex justify-center">
               <div className={`px-6 py-3 rounded-full text-center font-bold text-lg backdrop-blur-md border shadow-xl ${
-                gameState.isDead ? 'bg-red-500/20 text-red-400 border-red-500/50' :
+                gameState.isDead
+                  ? gameState.resultType === "stable"
+                    ? 'bg-blue-500/20 text-blue-400 border-blue-500/50'
+                    : 'bg-red-500/20 text-red-400 border-red-500/50'
+                  :
                 gameState.isPlaying ? 'bg-blue-500/20 text-blue-400 border-blue-500/50' :
                 'bg-gray-800/80 text-gray-300 border-gray-700'
               }`}>

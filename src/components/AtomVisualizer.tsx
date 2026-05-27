@@ -7,6 +7,7 @@ interface AtomVisualizerProps {
   electron: number;
   isDead: boolean;
   isPlaying: boolean;
+  resultType?: "stable" | "nuclear_decay" | "charge_failure" | "invalid_element";
 }
 
 interface ElectronState {
@@ -20,7 +21,7 @@ interface ElectronState {
   driftY: number;
 }
 
-function AtomVisualizerComponent({ proton, neutron, electron, isDead, isPlaying }: AtomVisualizerProps) {
+function AtomVisualizerComponent({ proton, neutron, electron, isDead, isPlaying, resultType }: AtomVisualizerProps) {
   // Nucleus Packing - Using a more spread out cluster approach
   const nucleusParticles = useMemo(() => {
     const total = proton + neutron;
@@ -105,27 +106,44 @@ function AtomVisualizerComponent({ proton, neutron, electron, isDead, isPlaying 
   }, []);
 
   return (
-    <div className="relative w-full aspect-square max-w-[500px] mx-auto flex items-center justify-center overflow-hidden bg-black/40 rounded-3xl border border-blue-500/20 shadow-[0_0_50px_rgba(0,100,255,0.1)]">
+    <div className={`relative w-full aspect-square max-w-[500px] mx-auto flex items-center justify-center overflow-hidden bg-black/40 rounded-3xl border transition-all duration-700 ${
+      resultType === "stable"
+        ? "border-blue-400/30 shadow-[0_0_70px_rgba(59,130,246,0.22)]"
+        : "border-blue-500/20 shadow-[0_0_50px_rgba(0,100,255,0.1)]"
+    }`}>
       
       {/* Electron Cloud Background */}
-      {!isDead && (
+      {(!isDead || resultType === "stable") && (
         <div className="absolute inset-0 flex items-center justify-center">
-           <div className="w-[80%] h-[80%] rounded-full bg-blue-400/5 blur-[60px] animate-pulse" />
-           <div className="w-[60%] h-[60%] rounded-full bg-blue-500/10 blur-[40px]" />
-           <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,transparent_70%)]" />
+           <div className={`w-[80%] h-[80%] rounded-full blur-[60px] animate-pulse ${
+             resultType === "stable" ? "bg-blue-400/15" : "bg-blue-400/5"
+           }`} />
+           <div className={`w-[60%] h-[60%] rounded-full blur-[40px] ${
+             resultType === "stable" ? "bg-blue-500/20" : "bg-blue-500/10"
+           }`} />
+           <div className={`absolute inset-0 ${
+             resultType === "stable"
+               ? "bg-[radial-gradient(circle,rgba(59,130,246,0.28)_0%,transparent_72%)]"
+               : "bg-[radial-gradient(circle,rgba(59,130,246,0.15)_0%,transparent_70%)]"
+           }`} />
         </div>
       )}
       
-      {/* If dead, show a red explosion glow */}
-      {isDead && (
+      {/* If stable, show a blue settling glow */}
+      {isDead && resultType === "stable" && (
+        <div className="absolute inset-0 bg-blue-500/25 blur-[100px] rounded-full animate-pulse" style={{ animationDuration: '1.2s' }} />
+      )}
+
+      {/* If dead from decay, show a red explosion glow */}
+      {isDead && resultType !== "stable" && (
         <div className="absolute inset-0 bg-red-600/30 blur-[100px] rounded-full animate-ping" style={{ animationDuration: '0.5s', animationIterationCount: 1 }} />
       )}
 
       {/* The Atom Container */}
-      <div className={`relative w-full h-full transition-all duration-1000 ${isDead ? 'scale-150 opacity-0' : 'scale-100 opacity-100'}`}>
+      <div className={`relative w-full h-full transition-all duration-1000 ${isDead && resultType !== "stable" ? 'scale-150 opacity-0' : 'scale-100 opacity-100'}`}>
         
         {/* Nucleus */}
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-500 ${isPlaying ? 'scale-110' : 'scale-100'}`}>
+        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-500 ${isPlaying || resultType === "stable" ? 'scale-110' : 'scale-100'}`}>
           <div className="relative">
             {nucleusParticles.map((p) => {
               // Larger particles
@@ -164,7 +182,7 @@ function AtomVisualizerComponent({ proton, neutron, electron, isDead, isPlaying 
       </div>
       
       {/* Particle explosion effect when dead */}
-      {isDead && (
+      {isDead && resultType !== "stable" && (
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
            {Array.from({ length: 40 }).map((_, i) => (
              <div 

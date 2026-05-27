@@ -7,6 +7,11 @@ export interface GameState {
   electron: number;
   statusMessage: string;
   isDead: boolean;
+  resultType?:
+    | "stable"
+    | "nuclear_decay"
+    | "charge_failure"
+    | "invalid_element";
 }
 
 export interface ScoreEntry {
