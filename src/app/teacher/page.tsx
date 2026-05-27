@@ -1,6 +1,7 @@
 "use client";
 import React, { useMemo } from "react";
 import { useScores } from "@/hooks/useScores";
+import { isotopeData } from "@/data/isotopes";
 import Link from "next/link";
 
 export default function TeacherDashboard() {
@@ -12,6 +13,21 @@ export default function TeacherDashboard() {
   }, [scores]);
 
   const topScore = scores.length > 0 ? scores[0].score : 0;
+
+  const getResultLabel = (score: (typeof scores)[number]) => {
+    if (score.resultType === "stable") return "안정 생존";
+    if (score.resultType === "radioactive_decay") return "붕괴";
+    if (score.resultType === "charge_failure") return "전하 불안정";
+    if (score.resultType === "invalid_element") return "존재하지 않는 원소";
+
+    const isotope = isotopeData[score.proton];
+    if (isotope && !Number.isFinite(isotope.halfLifeSeconds) && score.score > 0) {
+      return "안정 생존";
+    }
+
+    if (score.score > 0) return "붕괴";
+    return "실패";
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("atom_player_name");
@@ -78,7 +94,7 @@ export default function TeacherDashboard() {
           {/* Recent Fails (Live Log) */}
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-xl">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="text-red-400">💥</span> 최근 붕괴 로그
+              <span className="text-red-400">💥</span> 최근 플레이 기록
             </h2>
             <div className="space-y-3 h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
               {recentFails.map((fail) => {
@@ -94,7 +110,7 @@ export default function TeacherDashboard() {
                         <span className="font-mono bg-black/50 px-2 py-0.5 rounded text-gray-400 mr-2">
                           p:{fail.proton} n:{fail.neutron} e:{fail.electron}
                         </span>
-                        {fail.elementName} • {fail.isotope} 구성 후 붕괴
+                        {fail.elementName} • {fail.isotope} {getResultLabel(fail)}
                       </div>
                     </div>
                     <div className="text-right">

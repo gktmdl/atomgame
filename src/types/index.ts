@@ -12,6 +12,11 @@ export interface GameState {
 export interface ScoreEntry {
   id?: string;
   score: number;
+  resultType?:
+    | "stable"
+    | "radioactive_decay"
+    | "charge_failure"
+    | "invalid_element";
   survivalTime: number;
   proton: number;
   neutron: number;

@@ -21,7 +21,7 @@ export const calculateInstabilityMultiplier = (
   stableNeutrons: number
 ) => {
   const delta = Math.abs(neutrons - stableNeutrons);
-  return Math.pow(3, delta);
+  return Math.pow(2, delta);
 };
 
 const gaussianNoise = () => {

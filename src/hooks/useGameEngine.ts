@@ -67,8 +67,14 @@ export function useGameEngine() {
     let finalLifetime = 0;
     let message = "생존 중...";
     let initialDead = false;
+    let resultType:
+      | "stable"
+      | "radioactive_decay"
+      | "charge_failure"
+      | "invalid_element" = "radioactive_decay";
 
     const data = isotopeData[gameState.proton];
+    const isStableIsotope = data ? !Number.isFinite(data.halfLifeSeconds) : false;
 
     targetLifetimeRef.current = 0;
     targetScoreRef.current = 0;
@@ -76,9 +82,11 @@ export function useGameEngine() {
     if (!data) {
       initialDead = true;
       message = "존재하지 않는 원소입니다.";
+      resultType = "invalid_element";
     } else if (gameState.electron !== gameState.proton) {
       initialDead = true;
       message = "전하가 불안정하여 원자가 유지되지 못했습니다.";
+      resultType = "charge_failure";
     } else {
       const instabilityMultiplier = calculateInstabilityMultiplier(
         gameState.neutron,
@@ -94,6 +102,7 @@ export function useGameEngine() {
       if (finalLifetime < 0.1) {
          initialDead = true;
          message = "극도로 불안정하여 즉시 붕괴했습니다.";
+        resultType = "radioactive_decay";
       }
     }
 
@@ -116,6 +125,7 @@ export function useGameEngine() {
         electron: gameState.electron,
         isotope: data?.symbol || "?",
         elementName: data?.koreanName || "Unknown",
+        resultType,
       });
       return;
     }
@@ -156,6 +166,11 @@ export function useGameEngine() {
       const finalScore = targetScoreRef.current;
 
       const data = isotopeData[gameState.proton];
+      const isStableIsotope = data ? !Number.isFinite(data.halfLifeSeconds) : false;
+      const resultType = isStableIsotope ? "stable" : "radioactive_decay";
+      const endMessage = isStableIsotope
+        ? "원자가 안정적으로 생존했습니다!"
+        : "원자가 붕괴했습니다!";
       
       setGameState((prev) => ({
         ...prev,
@@ -163,7 +178,7 @@ export function useGameEngine() {
         isDead: true,
         survivalTime: finalSurvival,
         score: finalScore,
-        statusMessage: "원자가 붕괴했습니다!",
+        statusMessage: endMessage,
       }));
 
       submitScore({
@@ -174,6 +189,7 @@ export function useGameEngine() {
         electron: gameState.electron,
         isotope: data?.symbol || "?",
         elementName: data?.koreanName || "Unknown",
+        resultType,
       });
       return;
     }

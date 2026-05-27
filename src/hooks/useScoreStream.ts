@@ -33,6 +33,13 @@ export const useScoreStream = (limitCount = 50) => {
             : createdAtValue?.toDate?.() ?? new Date(0);
         return {
           score: Number(data.score ?? 0),
+          resultType:
+            data.resultType === "stable" ||
+            data.resultType === "radioactive_decay" ||
+            data.resultType === "charge_failure" ||
+            data.resultType === "invalid_element"
+              ? data.resultType
+              : undefined,
           survivalTime: Number(data.survivalTime ?? 0),
           proton: Number(data.proton ?? 0),
           neutron: Number(data.neutron ?? 0),
