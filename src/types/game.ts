@@ -3,7 +3,8 @@ export type IsotopeDatum = {
   name: string;
   koreanName: string;
   stableMass: number;
-  stableNeutrons: number;
+  stableNeutrons: number[];
+  preferredStableNeutrons: number;
   halfLifeSeconds: number;
   stabilityRank: number;
   baseLifetimeSeconds: number;

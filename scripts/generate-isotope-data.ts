@@ -141,12 +141,11 @@ const calculateBaseLifetime = (
   return Number((30 * scaled).toFixed(3));
 };
 
-const pickMostStable = (rows: RawNuclide[]) => {
-  const stable = rows.filter(
-    (row) =>
-      /stable/i.test(row.halfLifeRaw) ||
-      !Number.isFinite(row.halfLifeSeconds)
-  );
+const isStableNuclide = (row: RawNuclide) =>
+  /stable/i.test(row.halfLifeRaw) || !Number.isFinite(row.halfLifeSeconds);
+
+const pickPreferredNuclide = (rows: RawNuclide[]) => {
+  const stable = rows.filter(isStableNuclide);
   if (stable.length > 0) {
     return stable
       .slice()
@@ -162,10 +161,16 @@ const pickMostStable = (rows: RawNuclide[]) => {
   );
 };
 
+const uniqueSorted = (values: number[]) =>
+  Array.from(new Set(values)).sort((left, right) => left - right);
+
 const formatNumber = (value: number) => {
   if (!Number.isFinite(value)) return "Number.POSITIVE_INFINITY";
   return Number.isInteger(value) ? value.toString() : value.toString();
 };
+
+const formatNumberArray = (values: number[]) =>
+  values.length === 0 ? "[]" : `[${values.join(", ")}]`;
 
 const generateIsotopes = async () => {
   const csv = await loadCsv();
@@ -184,14 +189,16 @@ const generateIsotopes = async () => {
         englishName: element.name,
         koreanName: element.koreanName,
         stableMass: element.z,
-        stableNeutrons: 0,
+        stableNeutrons: [],
+        preferredStableNeutrons: 0,
         halfLifeSeconds: 0,
         stabilityRank: 1,
         baseLifetimeSeconds: 0,
       };
     }
 
-    const choice = pickMostStable(elementRows);
+    const stableRows = elementRows.filter(isStableNuclide);
+    const choice = pickPreferredNuclide(elementRows);
     const stabilityRank = calculateStabilityRank(
       choice.halfLifeSeconds,
       maxHalfLifeSeconds
@@ -207,7 +214,8 @@ const generateIsotopes = async () => {
       englishName: element.name,
       koreanName: element.koreanName,
       stableMass: choice.mass,
-      stableNeutrons: choice.n,
+      stableNeutrons: uniqueSorted(stableRows.map((row) => row.n)),
+      preferredStableNeutrons: choice.n,
       halfLifeSeconds: choice.halfLifeSeconds,
       stabilityRank,
       baseLifetimeSeconds,
@@ -227,7 +235,8 @@ const generateIsotopes = async () => {
     "  englishName: string;",
     "  koreanName: string;",
     "  stableMass: number;",
-    "  stableNeutrons: number;",
+    "  stableNeutrons: number[];",
+    "  preferredStableNeutrons: number;",
     "  halfLifeSeconds: number;",
     "  stabilityRank: number;",
     "  baseLifetimeSeconds: number;",
@@ -240,7 +249,8 @@ const generateIsotopes = async () => {
     lines.push(`    englishName: "${entry.englishName}",`);
     lines.push(`    koreanName: "${entry.koreanName}",`);
     lines.push(`    stableMass: ${entry.stableMass},`);
-    lines.push(`    stableNeutrons: ${entry.stableNeutrons},`);
+    lines.push(`    stableNeutrons: ${formatNumberArray(entry.stableNeutrons)},`);
+    lines.push(`    preferredStableNeutrons: ${entry.preferredStableNeutrons},`);
     lines.push(`    halfLifeSeconds: ${formatNumber(entry.halfLifeSeconds)},`);
     lines.push(`    stabilityRank: ${entry.stabilityRank},`);
     lines.push(`    baseLifetimeSeconds: ${entry.baseLifetimeSeconds},`);

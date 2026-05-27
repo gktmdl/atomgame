@@ -19,9 +19,19 @@ export const getStabilityGrade = (rank: number) => {
 
 export const calculateInstabilityMultiplier = (
   neutrons: number,
-  stableNeutrons: number
+  stableNeutrons: number[],
+  preferredStableNeutrons: number
 ) => {
-  const delta = Math.abs(neutrons - stableNeutrons);
+  const referenceNeutrons =
+    stableNeutrons.length > 0 ? stableNeutrons : [preferredStableNeutrons];
+
+  if (referenceNeutrons.includes(neutrons)) {
+    return 1;
+  }
+
+  const delta = Math.min(
+    ...referenceNeutrons.map((stableNeutron) => Math.abs(neutrons - stableNeutron))
+  );
   return Math.pow(2, delta);
 };
 

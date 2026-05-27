@@ -34,7 +34,7 @@ export function useGameEngine() {
     setGameState((prev) => ({
       ...prev,
       proton: clamped,
-      neutron: data ? data.stableNeutrons : prev.neutron,
+      neutron: data ? data.preferredStableNeutrons : prev.neutron,
       // Removed electron synchronization for educational purposes
       statusMessage: "원자를 구성하고 시작을 누르세요.",
     }));
@@ -85,14 +85,15 @@ export function useGameEngine() {
     } else {
       const instabilityMultiplier = calculateInstabilityMultiplier(
         gameState.neutron,
-        data.stableNeutrons
+        data.stableNeutrons,
+        data.preferredStableNeutrons
       );
       finalLifetime = calculateFinalLifetime(
         data.baseLifetimeSeconds || 0,
         instabilityMultiplier
       );
 
-      if (gameState.neutron !== data.stableNeutrons) {
+      if (!data.stableNeutrons.includes(gameState.neutron)) {
         resultType = "nuclear_decay";
       }
 
@@ -165,7 +166,7 @@ export function useGameEngine() {
       const data = isotopeData[gameState.proton];
       const isStableIsotope = data
         ? gameState.electron === gameState.proton &&
-          gameState.neutron === data.stableNeutrons
+          data.stableNeutrons.includes(gameState.neutron)
         : false;
       const resultType = isStableIsotope ? "stable" : "nuclear_decay";
       const endMessage = isStableIsotope

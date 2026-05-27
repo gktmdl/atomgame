@@ -24,12 +24,11 @@ export default function TeacherDashboard() {
     const isotope = isotopeData[score.proton];
     if (score.proton > 118 || !isotope) return "존재하지 않는 원자";
     if (score.electron !== score.proton) return "전하 불안정";
-    if (score.neutron !== isotope.stableNeutrons) return "원자핵 불안정 붕괴";
-    if (score.electron === score.proton && score.neutron === isotope.stableNeutrons) {
+    if (isotope.stableNeutrons.includes(score.neutron)) {
       return "안정 생존";
     }
 
-    return "실패";
+    return "원자핵 불안정 붕괴";
   };
 
   const handleLogout = () => {
