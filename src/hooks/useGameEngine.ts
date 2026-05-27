@@ -3,8 +3,6 @@ import { isotopeData } from "@/data/isotopes";
 import { GameState } from "@/types";
 import { useScores } from "./useScores";
 import {
-  applyScoreNoise,
-  calculateBaseScore,
   calculateFinalLifetime,
   calculateInstabilityMultiplier,
   calculateScore,
@@ -27,7 +25,6 @@ export function useGameEngine() {
   const requestRef = useRef<number>();
   const startTimeRef = useRef<number>(0);
   const targetLifetimeRef = useRef<number>(0);
-  const targetScoreRef = useRef<number>(0);
 
   // Automatically update neutrons when protons change, if not playing
   const setProton = useCallback((newProton: number) => {
@@ -74,10 +71,8 @@ export function useGameEngine() {
       | "invalid_element" = "radioactive_decay";
 
     const data = isotopeData[gameState.proton];
-    const isStableIsotope = data ? !Number.isFinite(data.halfLifeSeconds) : false;
 
     targetLifetimeRef.current = 0;
-    targetScoreRef.current = 0;
 
     if (!data) {
       initialDead = true;
@@ -96,12 +91,10 @@ export function useGameEngine() {
         data.baseLifetimeSeconds || 0,
         instabilityMultiplier
       );
-      const baseScore = calculateBaseScore(data.halfLifeSeconds);
-      targetScoreRef.current = applyScoreNoise(baseScore);
 
       if (finalLifetime < 0.1) {
          initialDead = true;
-         message = "극도로 불안정하여 즉시 붕괴했습니다.";
+         message = "불안정한 원자핵이 즉시 붕괴했습니다.";
         resultType = "radioactive_decay";
       }
     }
@@ -163,14 +156,14 @@ export function useGameEngine() {
     if (elapsedSeconds >= targetLifetimeRef.current) {
       // Game Over
       const finalSurvival = targetLifetimeRef.current;
-      const finalScore = targetScoreRef.current;
+      const finalScore = calculateScore(finalSurvival);
 
       const data = isotopeData[gameState.proton];
       const isStableIsotope = data ? !Number.isFinite(data.halfLifeSeconds) : false;
       const resultType = isStableIsotope ? "stable" : "radioactive_decay";
       const endMessage = isStableIsotope
         ? "원자가 안정적으로 생존했습니다!"
-        : "원자가 붕괴했습니다!";
+        : "불안정한 원자핵이 붕괴했습니다.";
       
       setGameState((prev) => ({
         ...prev,
@@ -194,11 +187,7 @@ export function useGameEngine() {
       return;
     }
 
-    const currentScore = calculateScore(
-      targetScoreRef.current,
-      elapsedSeconds,
-      targetLifetimeRef.current
-    );
+    const currentScore = calculateScore(elapsedSeconds);
 
     setGameState((prev) => ({
       ...prev,
