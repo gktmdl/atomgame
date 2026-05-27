@@ -27,23 +27,9 @@ export function Controls({ proton, neutron, electron, setProton, setNeutron, set
       
       {/* Current Isotope Info */}
       <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex flex-col mb-2">
           <h2 className="text-3xl font-black text-white">{data?.symbol || "?"}-{proton + neutron}</h2>
           <span className="text-xl font-bold text-gray-400">{data?.koreanName || "알 수 없음"} ({data?.name || "Unknown"})</span>
-        </div>
-        <div className="space-y-1 text-sm text-gray-400">
-          <div className="flex justify-between">
-            <span>안정성 등급:</span>
-            <span className={`font-bold ${data?.stabilityRank > 80 ? 'text-green-400' : data?.stabilityRank > 50 ? 'text-yellow-400' : 'text-red-400'}`}>
-              {data ? `${data.stabilityRank}/100` : "-"}
-            </span>
-          </div>
-          <div className="flex justify-between">
-            <span>기본 생존시간:</span>
-            <span className="text-blue-300">
-              {data ? `${data.baseLifetimeSeconds.toFixed(1)}초` : "-"}
-            </span>
-          </div>
         </div>
       </div>
 

@@ -21,7 +21,7 @@ export function Leaderboard() {
                   {index + 1}
                 </span>
                 <div>
-                  <div className="font-bold text-gray-200">{score.guestId}</div>
+                  <div className="font-bold text-gray-200">{score.playerName || score.guestId}</div>
                   <div className="text-xs text-gray-500">{score.isotope} ({score.elementName}) • {score.survivalTime.toFixed(1)}초 생존</div>
                 </div>
               </div>

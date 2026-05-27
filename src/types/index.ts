@@ -18,6 +18,7 @@ export interface ScoreEntry {
   electron: number;
   isotope: string;
   elementName: string;
-  guestId: string;
+  guestId?: string;
+  playerName?: string;
   createdAt: number;
 }

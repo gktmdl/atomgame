@@ -44,17 +44,13 @@ export function useScores() {
     };
   }, []);
 
-  const submitScore = async (entry: Omit<ScoreEntry, "id" | "createdAt" | "guestId">) => {
-    let guestId = localStorage.getItem("atom_guest_id");
-    if (!guestId) {
-      guestId = `Guest-${Math.floor(Math.random() * 10000)}`;
-      localStorage.setItem("atom_guest_id", guestId);
-    }
+  const submitScore = async (entry: Omit<ScoreEntry, "id" | "createdAt" | "guestId" | "playerName">) => {
+    const playerName = localStorage.getItem("atom_player_name") || "Unknown";
 
     try {
       await addDoc(collection(db, "scores"), {
         ...entry,
-        guestId,
+        playerName,
         createdAt: Date.now(),
       });
     } catch (error) {

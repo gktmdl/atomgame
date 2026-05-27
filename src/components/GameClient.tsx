@@ -1,12 +1,41 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useGameEngine } from "@/hooks/useGameEngine";
 import { AtomVisualizer } from "./AtomVisualizer";
 import { Controls } from "./Controls";
 import { Leaderboard } from "./Leaderboard";
+import { Login } from "./Login";
+import { useRouter } from "next/navigation";
 
 export function GameClient() {
   const { gameState, setProton, setNeutron, setElectron, startGame, resetGame } = useGameEngine();
+  const [playerName, setPlayerName] = useState<string | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const stored = localStorage.getItem("atom_player_name");
+    if (stored) {
+      if (stored === "admin") {
+        router.push("/teacher");
+      } else {
+        setPlayerName(stored);
+      }
+    }
+  }, [router]);
+
+  const handleLogin = (name: string) => {
+    if (name === "admin") {
+      localStorage.setItem("atom_player_name", "admin");
+      router.push("/teacher");
+    } else {
+      localStorage.setItem("atom_player_name", name);
+      setPlayerName(name);
+    }
+  };
+
+  if (!playerName) {
+    return <Login onLogin={handleLogin} />;
+  }
 
   return (
     <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden p-4 md:p-8 flex flex-col items-center">
@@ -16,6 +45,10 @@ export function GameClient() {
             원자 안정성 시뮬레이터
           </h1>
           <p className="text-gray-400 font-medium mt-1">Atomic Stability Survival</p>
+        </div>
+        <div className="text-right">
+          <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Player</div>
+          <div className="text-xl font-black text-blue-400">{playerName}</div>
         </div>
       </header>
 

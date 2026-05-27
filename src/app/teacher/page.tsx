@@ -7,7 +7,7 @@ export default function TeacherDashboard() {
   const { scores, recentFails } = useScores();
 
   const totalPlayers = useMemo(() => {
-    const uniqueIds = new Set(scores.map(s => s.guestId));
+    const uniqueIds = new Set(scores.map(s => s.playerName || s.guestId));
     return uniqueIds.size;
   }, [scores]);
 
@@ -50,7 +50,7 @@ export default function TeacherDashboard() {
                       {index + 1}
                     </div>
                     <div>
-                      <div className="font-bold">{score.guestId}</div>
+                      <div className="font-bold">{score.playerName || score.guestId}</div>
                       <div className="text-sm text-gray-400">{score.isotope} • {score.survivalTime.toFixed(1)}초 생존</div>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ export default function TeacherDashboard() {
                   <div key={fail.id} className="bg-red-950/20 p-4 rounded-xl border border-red-900/30 flex justify-between items-center">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="font-bold text-red-300">{fail.guestId}</span>
+                        <span className="font-bold text-red-300">{fail.playerName || fail.guestId}</span>
                         <span className="text-xs text-gray-500">{date.toLocaleTimeString()}</span>
                       </div>
                       <div className="text-sm text-gray-300">
