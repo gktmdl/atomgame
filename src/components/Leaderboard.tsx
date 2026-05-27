@@ -2,6 +2,7 @@
 import React from "react";
 import { useScores } from "@/hooks/useScores";
 import { SITE_TITLE } from "@/lib/site-brand";
+import { formatChargedAtomLabel } from "@/lib/isotope-utils";
 
 export function Leaderboard() {
   const { scores } = useScores();
@@ -15,22 +16,35 @@ export function Leaderboard() {
         {scores.length === 0 ? (
           <div className="text-center text-gray-500 py-10">아직 등록된 기록이 없습니다.</div>
         ) : (
-          scores.map((score, index) => (
-            <div key={score.id} className="bg-black/40 border border-gray-800 rounded-lg p-3 flex items-center justify-between transition-colors hover:bg-gray-800/50">
-              <div className="flex items-center gap-3">
-                <span className={`font-black w-6 text-center ${index < 3 ? 'text-yellow-400 text-lg' : 'text-gray-500'}`}>
-                  {index + 1}
-                </span>
-                <div>
-                  <div className="font-bold text-gray-200">{score.playerName || score.guestId}</div>
-                  <div className="text-xs text-gray-500">{score.elementName} • {score.isotope}</div>
+          scores.map((score, index) => {
+            const displayElementName = formatChargedAtomLabel(
+              score.elementName,
+              score.proton,
+              score.electron
+            );
+            const displayIsotope = formatChargedAtomLabel(
+              score.isotope,
+              score.proton,
+              score.electron
+            );
+
+            return (
+              <div key={score.id} className="bg-black/40 border border-gray-800 rounded-lg p-3 flex items-center justify-between transition-colors hover:bg-gray-800/50">
+                <div className="flex items-center gap-3">
+                  <span className={`font-black w-6 text-center ${index < 3 ? 'text-yellow-400 text-lg' : 'text-gray-500'}`}>
+                    {index + 1}
+                  </span>
+                  <div>
+                    <div className="font-bold text-gray-200">{score.playerName || score.guestId}</div>
+                    <div className="text-xs text-gray-500">{displayElementName} • {displayIsotope}</div>
+                  </div>
+                </div>
+                <div className="text-right">
+                  <div className="font-black text-blue-400">{score.score.toLocaleString()} 점</div>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="font-black text-blue-400">{score.score.toLocaleString()} 점</div>
-              </div>
-            </div>
-          ))
+            );
+          })
         )}
       </div>
     </div>

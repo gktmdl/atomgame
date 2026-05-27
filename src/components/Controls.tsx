@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { isotopeData } from "@/data/isotopes";
+import { formatChargedAtomLabel } from "@/lib/isotope-utils";
 
 interface ControlsProps {
   proton: number;
@@ -15,6 +16,12 @@ interface ControlsProps {
 
 export function Controls({ proton, neutron, electron, setProton, setNeutron, setElectron, isPlaying, isDead }: ControlsProps) {
   const data = isotopeData[proton];
+  const displayName = data
+    ? formatChargedAtomLabel(data.koreanName, proton, electron)
+    : "알 수 없음";
+  const displaySymbol = data
+    ? formatChargedAtomLabel(data.symbol, proton, electron)
+    : "?";
 
   const handleAdjust = (setter: (v: number) => void, current: number, delta: number) => {
     setter(current + delta);
@@ -29,9 +36,9 @@ export function Controls({ proton, neutron, electron, setProton, setNeutron, set
       <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3 flex-wrap">
-            <h2 className="text-3xl font-black text-white">{data?.koreanName || "알 수 없음"}</h2>
+            <h2 className="text-3xl font-black text-white">{displayName}</h2>
             <span className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm font-mono font-bold tracking-wider text-blue-300">
-              {data?.symbol || "?"}
+              {displaySymbol}
             </span>
           </div>
         </div>

@@ -3,6 +3,7 @@ import React, { useMemo } from "react";
 import { useScores } from "@/hooks/useScores";
 import { isotopeData } from "@/data/isotopes";
 import { SITE_TITLE } from "@/lib/site-brand";
+import { formatChargedAtomLabel } from "@/lib/isotope-utils";
 import Link from "next/link";
 
 export default function TeacherDashboard() {
@@ -74,22 +75,35 @@ export default function TeacherDashboard() {
               <span className="text-yellow-400">🏅</span> {SITE_TITLE} 랭킹 (상위 20)
             </h2>
             <div className="space-y-3 h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
-              {scores.map((score, index) => (
-                <div key={score.id} className="bg-black/50 p-4 rounded-xl border border-gray-800 flex justify-between items-center">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-8 h-8 flex items-center justify-center rounded-full font-black ${index < 3 ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/50' : 'bg-gray-800 text-gray-400'}`}>
-                      {index + 1}
+              {scores.map((score, index) => {
+                const displayElementName = formatChargedAtomLabel(
+                  score.elementName,
+                  score.proton,
+                  score.electron
+                );
+                const displayIsotope = formatChargedAtomLabel(
+                  score.isotope,
+                  score.proton,
+                  score.electron
+                );
+
+                return (
+                  <div key={score.id} className="bg-black/50 p-4 rounded-xl border border-gray-800 flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                      <div className={`w-8 h-8 flex items-center justify-center rounded-full font-black ${index < 3 ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/50' : 'bg-gray-800 text-gray-400'}`}>
+                        {index + 1}
+                      </div>
+                      <div>
+                        <div className="font-bold">{score.playerName || score.guestId}</div>
+                        <div className="text-sm text-gray-400">{displayElementName} • {displayIsotope}</div>
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-bold">{score.playerName || score.guestId}</div>
-                      <div className="text-sm text-gray-400">{score.elementName} • {score.isotope}</div>
+                    <div className="font-black text-xl text-blue-400">
+                      {score.score.toLocaleString()}
                     </div>
                   </div>
-                  <div className="font-black text-xl text-blue-400">
-                    {score.score.toLocaleString()}
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
 
@@ -101,6 +115,16 @@ export default function TeacherDashboard() {
             <div className="space-y-3 h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
               {recentFails.map((fail) => {
                 const date = new Date(fail.createdAt);
+                const displayElementName = formatChargedAtomLabel(
+                  fail.elementName,
+                  fail.proton,
+                  fail.electron
+                );
+                const displayIsotope = formatChargedAtomLabel(
+                  fail.isotope,
+                  fail.proton,
+                  fail.electron
+                );
                 return (
                   <div key={fail.id} className="bg-red-950/20 p-4 rounded-xl border border-red-900/30 flex justify-between items-center">
                     <div>
@@ -112,7 +136,7 @@ export default function TeacherDashboard() {
                         <span className="font-mono bg-black/50 px-2 py-0.5 rounded text-gray-400 mr-2">
                           p:{fail.proton} n:{fail.neutron} e:{fail.electron}
                         </span>
-                        {fail.elementName} • {fail.isotope} {getResultLabel(fail)}
+                        {displayElementName} • {displayIsotope} {getResultLabel(fail)}
                       </div>
                     </div>
                     <div className="text-right">

@@ -54,6 +54,12 @@ export const calculateFinalLifetime = (
 
 export const formatIsotopeLabel = (label: string) => label.split("-")[0].trim();
 
+export const formatChargedAtomLabel = (
+  label: string,
+  proton: number,
+  electron: number
+) => (electron === proton ? label : `${label}?`);
+
 export const calculateScore = (survivalSeconds: number) => {
   if (!Number.isFinite(survivalSeconds) || survivalSeconds <= 0) return 0;
 
