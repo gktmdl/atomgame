@@ -6,6 +6,23 @@ import { formatIsotopeLabel } from "@/lib/isotope-utils";
 
 const GUEST_ID_STORAGE_KEY = "atomgame-guest-id";
 
+const normalizeResultType = (value: unknown): ScoreEntry["resultType"] => {
+  if (
+    value === "stable" ||
+    value === "nuclear_decay" ||
+    value === "charge_failure" ||
+    value === "invalid_element"
+  ) {
+    return value;
+  }
+
+  if (value === "radioactive_decay") {
+    return "nuclear_decay";
+  }
+
+  return undefined;
+};
+
 const getOrCreateGuestId = () => {
   if (typeof window === "undefined") {
     return "Guest-unknown";
@@ -40,6 +57,7 @@ export function useScores() {
           id: doc.id,
           ...data,
           isotope: formatIsotopeLabel(String(data.isotope ?? "")),
+          resultType: normalizeResultType(data.resultType),
         } as ScoreEntry;
       });
       setScores(newScores);
@@ -59,6 +77,7 @@ export function useScores() {
           id: doc.id,
           ...data,
           isotope: formatIsotopeLabel(String(data.isotope ?? "")),
+          resultType: normalizeResultType(data.resultType),
         } as ScoreEntry;
       });
       setRecentFails(newFails);

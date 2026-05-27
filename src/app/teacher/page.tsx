@@ -17,16 +17,18 @@ export default function TeacherDashboard() {
 
   const getResultLabel = (score: (typeof scores)[number]) => {
     if (score.resultType === "stable") return "안정 생존";
-    if (score.resultType === "radioactive_decay") return "붕괴";
+    if (score.resultType === "nuclear_decay") return "원자핵 불안정 붕괴";
     if (score.resultType === "charge_failure") return "전하 불안정";
-    if (score.resultType === "invalid_element") return "존재하지 않는 원소";
+    if (score.resultType === "invalid_element") return "존재하지 않는 원자";
 
     const isotope = isotopeData[score.proton];
-    if (isotope && !Number.isFinite(isotope.halfLifeSeconds) && score.score > 0) {
+    if (score.proton > 118 || !isotope) return "존재하지 않는 원자";
+    if (score.electron !== score.proton) return "전하 불안정";
+    if (score.neutron !== isotope.stableNeutrons) return "원자핵 불안정 붕괴";
+    if (score.electron === score.proton && score.neutron === isotope.stableNeutrons) {
       return "안정 생존";
     }
 
-    if (score.score > 0) return "붕괴";
     return "실패";
   };
 

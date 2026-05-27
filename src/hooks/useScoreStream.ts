@@ -13,6 +13,23 @@ import { db } from "@/lib/firebase";
 import { formatIsotopeLabel } from "@/lib/isotope-utils";
 import type { ScoreEntry } from "@/types/game";
 
+const normalizeResultType = (value: unknown): ScoreEntry["resultType"] => {
+  if (
+    value === "stable" ||
+    value === "nuclear_decay" ||
+    value === "charge_failure" ||
+    value === "invalid_element"
+  ) {
+    return value;
+  }
+
+  if (value === "radioactive_decay") {
+    return "nuclear_decay";
+  }
+
+  return undefined;
+};
+
 export const useScoreStream = (limitCount = 50) => {
   const [scores, setScores] = useState<ScoreEntry[]>([]);
 
@@ -33,13 +50,7 @@ export const useScoreStream = (limitCount = 50) => {
             : createdAtValue?.toDate?.() ?? new Date(0);
         return {
           score: Number(data.score ?? 0),
-          resultType:
-            data.resultType === "stable" ||
-            data.resultType === "radioactive_decay" ||
-            data.resultType === "charge_failure" ||
-            data.resultType === "invalid_element"
-              ? data.resultType
-              : undefined,
+          resultType: normalizeResultType(data.resultType),
           survivalTime: Number(data.survivalTime ?? 0),
           proton: Number(data.proton ?? 0),
           neutron: Number(data.neutron ?? 0),

@@ -66,17 +66,17 @@ export function useGameEngine() {
     let initialDead = false;
     let resultType:
       | "stable"
-      | "radioactive_decay"
+      | "nuclear_decay"
       | "charge_failure"
-      | "invalid_element" = "radioactive_decay";
+      | "invalid_element" = "nuclear_decay";
 
     const data = isotopeData[gameState.proton];
 
     targetLifetimeRef.current = 0;
 
-    if (!data) {
+    if (gameState.proton > 118 || !data) {
       initialDead = true;
-      message = "존재하지 않는 원소입니다.";
+      message = "존재하지 않는 원자입니다.";
       resultType = "invalid_element";
     } else if (gameState.electron !== gameState.proton) {
       initialDead = true;
@@ -92,10 +92,14 @@ export function useGameEngine() {
         instabilityMultiplier
       );
 
+      if (gameState.neutron !== data.stableNeutrons) {
+        resultType = "nuclear_decay";
+      }
+
       if (finalLifetime < 0.1) {
          initialDead = true;
-         message = "불안정한 원자핵이 즉시 붕괴했습니다.";
-        resultType = "radioactive_decay";
+         message = "원자핵 불안정 붕괴";
+        resultType = "nuclear_decay";
       }
     }
 
@@ -159,11 +163,14 @@ export function useGameEngine() {
       const finalScore = calculateScore(finalSurvival);
 
       const data = isotopeData[gameState.proton];
-      const isStableIsotope = data ? !Number.isFinite(data.halfLifeSeconds) : false;
-      const resultType = isStableIsotope ? "stable" : "radioactive_decay";
+      const isStableIsotope = data
+        ? gameState.electron === gameState.proton &&
+          gameState.neutron === data.stableNeutrons
+        : false;
+      const resultType = isStableIsotope ? "stable" : "nuclear_decay";
       const endMessage = isStableIsotope
         ? "원자가 안정적으로 생존했습니다!"
-        : "불안정한 원자핵이 붕괴했습니다.";
+        : "원자핵 불안정 붕괴";
       
       setGameState((prev) => ({
         ...prev,

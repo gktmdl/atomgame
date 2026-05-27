@@ -13,7 +13,7 @@ export type ScoreEntry = {
   score: number;
   resultType?:
     | "stable"
-    | "radioactive_decay"
+    | "nuclear_decay"
     | "charge_failure"
     | "invalid_element";
   survivalTime: number;
