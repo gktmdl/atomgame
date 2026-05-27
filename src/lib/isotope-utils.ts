@@ -1,7 +1,10 @@
-import { isotopeData } from "@/data/isotopes";
+import { isotopeData, maxHalfLifeSeconds } from "@/data/isotopes";
 
 const clamp = (value: number, min: number, max: number) =>
   Math.min(Math.max(value, min), max);
+
+const SCORE_TIER = 1_000_000_000;
+const SCORE_GROWTH_FACTOR = 12;
 
 export const getIsotope = (proton: number) => isotopeData[proton];
 
@@ -38,12 +41,35 @@ export const calculateFinalLifetime = (
   return Math.max(0, adjusted * (1 + noise));
 };
 
-export const calculateScore = (survivalTimeSeconds: number) => {
-  const t = clamp(survivalTimeSeconds, 0, 30);
-  const factor = 12;
-  const numerator = Math.exp((factor * t) / 30) - 1;
-  const denominator = Math.exp(factor) - 1;
-  return Math.floor(1_000_000_000 * (numerator / denominator));
+export const formatIsotopeLabel = (label: string) => label.split("-")[0].trim();
+
+export const calculateBaseScore = (halfLifeSeconds: number) => {
+  if (!Number.isFinite(halfLifeSeconds)) return SCORE_TIER;
+  if (halfLifeSeconds <= 0) return 0;
+
+  const normalized = Math.log10(halfLifeSeconds + 1) / Math.log10(maxHalfLifeSeconds + 1);
+  const shaped = Math.pow(clamp(normalized, 0, 1), 3.2);
+  return Math.round(SCORE_TIER * shaped);
+};
+
+export const applyScoreNoise = (baseScore: number) => {
+  const noise = clamp(gaussianNoise() * 0.02, -0.05, 0.05);
+  return Math.max(0, Math.round(baseScore * (1 + noise)));
+};
+
+export const calculateScore = (
+  baseScore: number,
+  elapsedSeconds: number,
+  totalSeconds: number
+) => {
+  if (baseScore <= 0) return 0;
+  if (totalSeconds <= 0) return baseScore;
+
+  const progress = clamp(elapsedSeconds / totalSeconds, 0, 1);
+  const easedProgress =
+    (Math.exp(SCORE_GROWTH_FACTOR * progress) - 1) /
+    (Math.exp(SCORE_GROWTH_FACTOR) - 1);
+  return Math.floor(baseScore * easedProgress);
 };
 
 export const formatDuration = (seconds: number) => {

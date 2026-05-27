@@ -7,7 +7,7 @@ export const maxHalfLifeSeconds = 7.10046e+31;
 
 export const isotopeData: Record<number, {
   symbol: string;
-  name: string;
+  englishName: string;
   koreanName: string;
   stableMass: number;
   stableNeutrons: number;
@@ -17,7 +17,7 @@ export const isotopeData: Record<number, {
 }> = {
   1: {
     symbol: "H",
-    name: "Hydrogen",
+    englishName: "Hydrogen",
     koreanName: "수소",
     stableMass: 1,
     stableNeutrons: 0,
@@ -27,7 +27,7 @@ export const isotopeData: Record<number, {
   },
   2: {
     symbol: "He",
-    name: "Helium",
+    englishName: "Helium",
     koreanName: "헬륨",
     stableMass: 4,
     stableNeutrons: 2,
@@ -37,7 +37,7 @@ export const isotopeData: Record<number, {
   },
   3: {
     symbol: "Li",
-    name: "Lithium",
+    englishName: "Lithium",
     koreanName: "리튬",
     stableMass: 7,
     stableNeutrons: 4,
@@ -47,7 +47,7 @@ export const isotopeData: Record<number, {
   },
   4: {
     symbol: "Be",
-    name: "Beryllium",
+    englishName: "Beryllium",
     koreanName: "베릴륨",
     stableMass: 9,
     stableNeutrons: 5,
@@ -57,7 +57,7 @@ export const isotopeData: Record<number, {
   },
   5: {
     symbol: "B",
-    name: "Boron",
+    englishName: "Boron",
     koreanName: "붕소",
     stableMass: 11,
     stableNeutrons: 6,
@@ -67,7 +67,7 @@ export const isotopeData: Record<number, {
   },
   6: {
     symbol: "C",
-    name: "Carbon",
+    englishName: "Carbon",
     koreanName: "탄소",
     stableMass: 12,
     stableNeutrons: 6,
@@ -77,7 +77,7 @@ export const isotopeData: Record<number, {
   },
   7: {
     symbol: "N",
-    name: "Nitrogen",
+    englishName: "Nitrogen",
     koreanName: "질소",
     stableMass: 14,
     stableNeutrons: 7,
@@ -87,7 +87,7 @@ export const isotopeData: Record<number, {
   },
   8: {
     symbol: "O",
-    name: "Oxygen",
+    englishName: "Oxygen",
     koreanName: "산소",
     stableMass: 16,
     stableNeutrons: 8,
@@ -97,7 +97,7 @@ export const isotopeData: Record<number, {
   },
   9: {
     symbol: "F",
-    name: "Fluorine",
+    englishName: "Fluorine",
     koreanName: "플루오린",
     stableMass: 19,
     stableNeutrons: 10,
@@ -107,7 +107,7 @@ export const isotopeData: Record<number, {
   },
   10: {
     symbol: "Ne",
-    name: "Neon",
+    englishName: "Neon",
     koreanName: "네온",
     stableMass: 20,
     stableNeutrons: 10,
@@ -117,7 +117,7 @@ export const isotopeData: Record<number, {
   },
   11: {
     symbol: "Na",
-    name: "Sodium",
+    englishName: "Sodium",
     koreanName: "나트륨",
     stableMass: 23,
     stableNeutrons: 12,
@@ -127,7 +127,7 @@ export const isotopeData: Record<number, {
   },
   12: {
     symbol: "Mg",
-    name: "Magnesium",
+    englishName: "Magnesium",
     koreanName: "마그네슘",
     stableMass: 24,
     stableNeutrons: 12,
@@ -137,7 +137,7 @@ export const isotopeData: Record<number, {
   },
   13: {
     symbol: "Al",
-    name: "Aluminium",
+    englishName: "Aluminium",
     koreanName: "알루미늄",
     stableMass: 27,
     stableNeutrons: 14,
@@ -147,7 +147,7 @@ export const isotopeData: Record<number, {
   },
   14: {
     symbol: "Si",
-    name: "Silicon",
+    englishName: "Silicon",
     koreanName: "규소",
     stableMass: 28,
     stableNeutrons: 14,
@@ -157,7 +157,7 @@ export const isotopeData: Record<number, {
   },
   15: {
     symbol: "P",
-    name: "Phosphorus",
+    englishName: "Phosphorus",
     koreanName: "인",
     stableMass: 31,
     stableNeutrons: 16,
@@ -167,7 +167,7 @@ export const isotopeData: Record<number, {
   },
   16: {
     symbol: "S",
-    name: "Sulfur",
+    englishName: "Sulfur",
     koreanName: "황",
     stableMass: 32,
     stableNeutrons: 16,
@@ -177,7 +177,7 @@ export const isotopeData: Record<number, {
   },
   17: {
     symbol: "Cl",
-    name: "Chlorine",
+    englishName: "Chlorine",
     koreanName: "염소",
     stableMass: 35,
     stableNeutrons: 18,
@@ -187,7 +187,7 @@ export const isotopeData: Record<number, {
   },
   18: {
     symbol: "Ar",
-    name: "Argon",
+    englishName: "Argon",
     koreanName: "아르곤",
     stableMass: 40,
     stableNeutrons: 22,
@@ -197,7 +197,7 @@ export const isotopeData: Record<number, {
   },
   19: {
     symbol: "K",
-    name: "Potassium",
+    englishName: "Potassium",
     koreanName: "칼륨",
     stableMass: 39,
     stableNeutrons: 20,
@@ -207,7 +207,7 @@ export const isotopeData: Record<number, {
   },
   20: {
     symbol: "Ca",
-    name: "Calcium",
+    englishName: "Calcium",
     koreanName: "칼슘",
     stableMass: 40,
     stableNeutrons: 20,
@@ -217,7 +217,7 @@ export const isotopeData: Record<number, {
   },
   21: {
     symbol: "Sc",
-    name: "Scandium",
+    englishName: "Scandium",
     koreanName: "스칸듐",
     stableMass: 45,
     stableNeutrons: 24,
@@ -227,7 +227,7 @@ export const isotopeData: Record<number, {
   },
   22: {
     symbol: "Ti",
-    name: "Titanium",
+    englishName: "Titanium",
     koreanName: "티타늄",
     stableMass: 48,
     stableNeutrons: 26,
@@ -237,7 +237,7 @@ export const isotopeData: Record<number, {
   },
   23: {
     symbol: "V",
-    name: "Vanadium",
+    englishName: "Vanadium",
     koreanName: "바나듐",
     stableMass: 51,
     stableNeutrons: 28,
@@ -247,7 +247,7 @@ export const isotopeData: Record<number, {
   },
   24: {
     symbol: "Cr",
-    name: "Chromium",
+    englishName: "Chromium",
     koreanName: "크로뮴",
     stableMass: 52,
     stableNeutrons: 28,
@@ -257,7 +257,7 @@ export const isotopeData: Record<number, {
   },
   25: {
     symbol: "Mn",
-    name: "Manganese",
+    englishName: "Manganese",
     koreanName: "망간",
     stableMass: 55,
     stableNeutrons: 30,
@@ -267,7 +267,7 @@ export const isotopeData: Record<number, {
   },
   26: {
     symbol: "Fe",
-    name: "Iron",
+    englishName: "Iron",
     koreanName: "철",
     stableMass: 56,
     stableNeutrons: 30,
@@ -277,7 +277,7 @@ export const isotopeData: Record<number, {
   },
   27: {
     symbol: "Co",
-    name: "Cobalt",
+    englishName: "Cobalt",
     koreanName: "코발트",
     stableMass: 59,
     stableNeutrons: 32,
@@ -287,7 +287,7 @@ export const isotopeData: Record<number, {
   },
   28: {
     symbol: "Ni",
-    name: "Nickel",
+    englishName: "Nickel",
     koreanName: "니켈",
     stableMass: 58,
     stableNeutrons: 30,
@@ -297,7 +297,7 @@ export const isotopeData: Record<number, {
   },
   29: {
     symbol: "Cu",
-    name: "Copper",
+    englishName: "Copper",
     koreanName: "구리",
     stableMass: 63,
     stableNeutrons: 34,
@@ -307,7 +307,7 @@ export const isotopeData: Record<number, {
   },
   30: {
     symbol: "Zn",
-    name: "Zinc",
+    englishName: "Zinc",
     koreanName: "아연",
     stableMass: 64,
     stableNeutrons: 34,
@@ -317,7 +317,7 @@ export const isotopeData: Record<number, {
   },
   31: {
     symbol: "Ga",
-    name: "Gallium",
+    englishName: "Gallium",
     koreanName: "갈륨",
     stableMass: 69,
     stableNeutrons: 38,
@@ -327,7 +327,7 @@ export const isotopeData: Record<number, {
   },
   32: {
     symbol: "Ge",
-    name: "Germanium",
+    englishName: "Germanium",
     koreanName: "게르마늄",
     stableMass: 74,
     stableNeutrons: 42,
@@ -337,7 +337,7 @@ export const isotopeData: Record<number, {
   },
   33: {
     symbol: "As",
-    name: "Arsenic",
+    englishName: "Arsenic",
     koreanName: "비소",
     stableMass: 75,
     stableNeutrons: 42,
@@ -347,7 +347,7 @@ export const isotopeData: Record<number, {
   },
   34: {
     symbol: "Se",
-    name: "Selenium",
+    englishName: "Selenium",
     koreanName: "셀레늄",
     stableMass: 80,
     stableNeutrons: 46,
@@ -357,7 +357,7 @@ export const isotopeData: Record<number, {
   },
   35: {
     symbol: "Br",
-    name: "Bromine",
+    englishName: "Bromine",
     koreanName: "브로민",
     stableMass: 79,
     stableNeutrons: 44,
@@ -367,7 +367,7 @@ export const isotopeData: Record<number, {
   },
   36: {
     symbol: "Kr",
-    name: "Krypton",
+    englishName: "Krypton",
     koreanName: "크립톤",
     stableMass: 84,
     stableNeutrons: 48,
@@ -377,7 +377,7 @@ export const isotopeData: Record<number, {
   },
   37: {
     symbol: "Rb",
-    name: "Rubidium",
+    englishName: "Rubidium",
     koreanName: "루비듐",
     stableMass: 85,
     stableNeutrons: 48,
@@ -387,7 +387,7 @@ export const isotopeData: Record<number, {
   },
   38: {
     symbol: "Sr",
-    name: "Strontium",
+    englishName: "Strontium",
     koreanName: "스트론튬",
     stableMass: 88,
     stableNeutrons: 50,
@@ -397,7 +397,7 @@ export const isotopeData: Record<number, {
   },
   39: {
     symbol: "Y",
-    name: "Yttrium",
+    englishName: "Yttrium",
     koreanName: "이트륨",
     stableMass: 89,
     stableNeutrons: 50,
@@ -407,7 +407,7 @@ export const isotopeData: Record<number, {
   },
   40: {
     symbol: "Zr",
-    name: "Zirconium",
+    englishName: "Zirconium",
     koreanName: "지르코늄",
     stableMass: 90,
     stableNeutrons: 50,
@@ -417,7 +417,7 @@ export const isotopeData: Record<number, {
   },
   41: {
     symbol: "Nb",
-    name: "Niobium",
+    englishName: "Niobium",
     koreanName: "나이오븀",
     stableMass: 93,
     stableNeutrons: 52,
@@ -427,7 +427,7 @@ export const isotopeData: Record<number, {
   },
   42: {
     symbol: "Mo",
-    name: "Molybdenum",
+    englishName: "Molybdenum",
     koreanName: "몰리브덴",
     stableMass: 98,
     stableNeutrons: 56,
@@ -437,7 +437,7 @@ export const isotopeData: Record<number, {
   },
   43: {
     symbol: "Tc",
-    name: "Technetium",
+    englishName: "Technetium",
     koreanName: "테크네튬",
     stableMass: 97,
     stableNeutrons: 54,
@@ -447,7 +447,7 @@ export const isotopeData: Record<number, {
   },
   44: {
     symbol: "Ru",
-    name: "Ruthenium",
+    englishName: "Ruthenium",
     koreanName: "루테늄",
     stableMass: 102,
     stableNeutrons: 58,
@@ -457,7 +457,7 @@ export const isotopeData: Record<number, {
   },
   45: {
     symbol: "Rh",
-    name: "Rhodium",
+    englishName: "Rhodium",
     koreanName: "로듐",
     stableMass: 103,
     stableNeutrons: 58,
@@ -467,7 +467,7 @@ export const isotopeData: Record<number, {
   },
   46: {
     symbol: "Pd",
-    name: "Palladium",
+    englishName: "Palladium",
     koreanName: "팔라듐",
     stableMass: 106,
     stableNeutrons: 60,
@@ -477,7 +477,7 @@ export const isotopeData: Record<number, {
   },
   47: {
     symbol: "Ag",
-    name: "Silver",
+    englishName: "Silver",
     koreanName: "은",
     stableMass: 107,
     stableNeutrons: 60,
@@ -487,7 +487,7 @@ export const isotopeData: Record<number, {
   },
   48: {
     symbol: "Cd",
-    name: "Cadmium",
+    englishName: "Cadmium",
     koreanName: "카드뮴",
     stableMass: 114,
     stableNeutrons: 66,
@@ -497,7 +497,7 @@ export const isotopeData: Record<number, {
   },
   49: {
     symbol: "In",
-    name: "Indium",
+    englishName: "Indium",
     koreanName: "인듐",
     stableMass: 113,
     stableNeutrons: 64,
@@ -507,7 +507,7 @@ export const isotopeData: Record<number, {
   },
   50: {
     symbol: "Sn",
-    name: "Tin",
+    englishName: "Tin",
     koreanName: "주석",
     stableMass: 120,
     stableNeutrons: 70,
@@ -517,7 +517,7 @@ export const isotopeData: Record<number, {
   },
   51: {
     symbol: "Sb",
-    name: "Antimony",
+    englishName: "Antimony",
     koreanName: "안티몬",
     stableMass: 121,
     stableNeutrons: 70,
@@ -527,7 +527,7 @@ export const isotopeData: Record<number, {
   },
   52: {
     symbol: "Te",
-    name: "Tellurium",
+    englishName: "Tellurium",
     koreanName: "텔루륨",
     stableMass: 126,
     stableNeutrons: 74,
@@ -537,7 +537,7 @@ export const isotopeData: Record<number, {
   },
   53: {
     symbol: "I",
-    name: "Iodine",
+    englishName: "Iodine",
     koreanName: "아이오딘",
     stableMass: 127,
     stableNeutrons: 74,
@@ -547,7 +547,7 @@ export const isotopeData: Record<number, {
   },
   54: {
     symbol: "Xe",
-    name: "Xenon",
+    englishName: "Xenon",
     koreanName: "크세논",
     stableMass: 132,
     stableNeutrons: 78,
@@ -557,7 +557,7 @@ export const isotopeData: Record<number, {
   },
   55: {
     symbol: "Cs",
-    name: "Cesium",
+    englishName: "Cesium",
     koreanName: "세슘",
     stableMass: 133,
     stableNeutrons: 78,
@@ -567,7 +567,7 @@ export const isotopeData: Record<number, {
   },
   56: {
     symbol: "Ba",
-    name: "Barium",
+    englishName: "Barium",
     koreanName: "바륨",
     stableMass: 138,
     stableNeutrons: 82,
@@ -577,7 +577,7 @@ export const isotopeData: Record<number, {
   },
   57: {
     symbol: "La",
-    name: "Lanthanum",
+    englishName: "Lanthanum",
     koreanName: "란타넘",
     stableMass: 139,
     stableNeutrons: 82,
@@ -587,7 +587,7 @@ export const isotopeData: Record<number, {
   },
   58: {
     symbol: "Ce",
-    name: "Cerium",
+    englishName: "Cerium",
     koreanName: "세륨",
     stableMass: 140,
     stableNeutrons: 82,
@@ -597,7 +597,7 @@ export const isotopeData: Record<number, {
   },
   59: {
     symbol: "Pr",
-    name: "Praseodymium",
+    englishName: "Praseodymium",
     koreanName: "프라세오디뮴",
     stableMass: 141,
     stableNeutrons: 82,
@@ -607,7 +607,7 @@ export const isotopeData: Record<number, {
   },
   60: {
     symbol: "Nd",
-    name: "Neodymium",
+    englishName: "Neodymium",
     koreanName: "네오디뮴",
     stableMass: 142,
     stableNeutrons: 82,
@@ -617,7 +617,7 @@ export const isotopeData: Record<number, {
   },
   61: {
     symbol: "Pm",
-    name: "Promethium",
+    englishName: "Promethium",
     koreanName: "프로메튬",
     stableMass: 145,
     stableNeutrons: 84,
@@ -627,7 +627,7 @@ export const isotopeData: Record<number, {
   },
   62: {
     symbol: "Sm",
-    name: "Samarium",
+    englishName: "Samarium",
     koreanName: "사마륨",
     stableMass: 152,
     stableNeutrons: 90,
@@ -637,7 +637,7 @@ export const isotopeData: Record<number, {
   },
   63: {
     symbol: "Eu",
-    name: "Europium",
+    englishName: "Europium",
     koreanName: "유로퓸",
     stableMass: 153,
     stableNeutrons: 90,
@@ -647,7 +647,7 @@ export const isotopeData: Record<number, {
   },
   64: {
     symbol: "Gd",
-    name: "Gadolinium",
+    englishName: "Gadolinium",
     koreanName: "가돌리늄",
     stableMass: 158,
     stableNeutrons: 94,
@@ -657,7 +657,7 @@ export const isotopeData: Record<number, {
   },
   65: {
     symbol: "Tb",
-    name: "Terbium",
+    englishName: "Terbium",
     koreanName: "터븀",
     stableMass: 159,
     stableNeutrons: 94,
@@ -667,7 +667,7 @@ export const isotopeData: Record<number, {
   },
   66: {
     symbol: "Dy",
-    name: "Dysprosium",
+    englishName: "Dysprosium",
     koreanName: "디스프로슘",
     stableMass: 164,
     stableNeutrons: 98,
@@ -677,7 +677,7 @@ export const isotopeData: Record<number, {
   },
   67: {
     symbol: "Ho",
-    name: "Holmium",
+    englishName: "Holmium",
     koreanName: "홀뮴",
     stableMass: 165,
     stableNeutrons: 98,
@@ -687,7 +687,7 @@ export const isotopeData: Record<number, {
   },
   68: {
     symbol: "Er",
-    name: "Erbium",
+    englishName: "Erbium",
     koreanName: "어븀",
     stableMass: 166,
     stableNeutrons: 98,
@@ -697,7 +697,7 @@ export const isotopeData: Record<number, {
   },
   69: {
     symbol: "Tm",
-    name: "Thulium",
+    englishName: "Thulium",
     koreanName: "툴륨",
     stableMass: 169,
     stableNeutrons: 100,
@@ -707,7 +707,7 @@ export const isotopeData: Record<number, {
   },
   70: {
     symbol: "Yb",
-    name: "Ytterbium",
+    englishName: "Ytterbium",
     koreanName: "이터븀",
     stableMass: 174,
     stableNeutrons: 104,
@@ -717,7 +717,7 @@ export const isotopeData: Record<number, {
   },
   71: {
     symbol: "Lu",
-    name: "Lutetium",
+    englishName: "Lutetium",
     koreanName: "루테튬",
     stableMass: 175,
     stableNeutrons: 104,
@@ -727,7 +727,7 @@ export const isotopeData: Record<number, {
   },
   72: {
     symbol: "Hf",
-    name: "Hafnium",
+    englishName: "Hafnium",
     koreanName: "하프늄",
     stableMass: 180,
     stableNeutrons: 108,
@@ -737,7 +737,7 @@ export const isotopeData: Record<number, {
   },
   73: {
     symbol: "Ta",
-    name: "Tantalum",
+    englishName: "Tantalum",
     koreanName: "탄탈럼",
     stableMass: 181,
     stableNeutrons: 108,
@@ -747,7 +747,7 @@ export const isotopeData: Record<number, {
   },
   74: {
     symbol: "W",
-    name: "Tungsten",
+    englishName: "Tungsten",
     koreanName: "텅스텐",
     stableMass: 184,
     stableNeutrons: 110,
@@ -757,7 +757,7 @@ export const isotopeData: Record<number, {
   },
   75: {
     symbol: "Re",
-    name: "Rhenium",
+    englishName: "Rhenium",
     koreanName: "레늄",
     stableMass: 185,
     stableNeutrons: 110,
@@ -767,7 +767,7 @@ export const isotopeData: Record<number, {
   },
   76: {
     symbol: "Os",
-    name: "Osmium",
+    englishName: "Osmium",
     koreanName: "오스뮴",
     stableMass: 192,
     stableNeutrons: 116,
@@ -777,7 +777,7 @@ export const isotopeData: Record<number, {
   },
   77: {
     symbol: "Ir",
-    name: "Iridium",
+    englishName: "Iridium",
     koreanName: "이리듐",
     stableMass: 193,
     stableNeutrons: 116,
@@ -787,7 +787,7 @@ export const isotopeData: Record<number, {
   },
   78: {
     symbol: "Pt",
-    name: "Platinum",
+    englishName: "Platinum",
     koreanName: "백금",
     stableMass: 195,
     stableNeutrons: 117,
@@ -797,7 +797,7 @@ export const isotopeData: Record<number, {
   },
   79: {
     symbol: "Au",
-    name: "Gold",
+    englishName: "Gold",
     koreanName: "금",
     stableMass: 197,
     stableNeutrons: 118,
@@ -807,7 +807,7 @@ export const isotopeData: Record<number, {
   },
   80: {
     symbol: "Hg",
-    name: "Mercury",
+    englishName: "Mercury",
     koreanName: "수은",
     stableMass: 202,
     stableNeutrons: 122,
@@ -817,7 +817,7 @@ export const isotopeData: Record<number, {
   },
   81: {
     symbol: "Tl",
-    name: "Thallium",
+    englishName: "Thallium",
     koreanName: "탈륨",
     stableMass: 205,
     stableNeutrons: 124,
@@ -827,7 +827,7 @@ export const isotopeData: Record<number, {
   },
   82: {
     symbol: "Pb",
-    name: "Lead",
+    englishName: "Lead",
     koreanName: "납",
     stableMass: 208,
     stableNeutrons: 126,
@@ -837,7 +837,7 @@ export const isotopeData: Record<number, {
   },
   83: {
     symbol: "Bi",
-    name: "Bismuth",
+    englishName: "Bismuth",
     koreanName: "비스무트",
     stableMass: 209,
     stableNeutrons: 126,
@@ -847,7 +847,7 @@ export const isotopeData: Record<number, {
   },
   84: {
     symbol: "Po",
-    name: "Polonium",
+    englishName: "Polonium",
     koreanName: "폴로늄",
     stableMass: 209,
     stableNeutrons: 125,
@@ -857,7 +857,7 @@ export const isotopeData: Record<number, {
   },
   85: {
     symbol: "At",
-    name: "Astatine",
+    englishName: "Astatine",
     koreanName: "아스타틴",
     stableMass: 210,
     stableNeutrons: 125,
@@ -867,7 +867,7 @@ export const isotopeData: Record<number, {
   },
   86: {
     symbol: "Rn",
-    name: "Radon",
+    englishName: "Radon",
     koreanName: "라돈",
     stableMass: 222,
     stableNeutrons: 136,
@@ -877,7 +877,7 @@ export const isotopeData: Record<number, {
   },
   87: {
     symbol: "Fr",
-    name: "Francium",
+    englishName: "Francium",
     koreanName: "프랑슘",
     stableMass: 223,
     stableNeutrons: 136,
@@ -887,7 +887,7 @@ export const isotopeData: Record<number, {
   },
   88: {
     symbol: "Ra",
-    name: "Radium",
+    englishName: "Radium",
     koreanName: "라듐",
     stableMass: 226,
     stableNeutrons: 138,
@@ -897,7 +897,7 @@ export const isotopeData: Record<number, {
   },
   89: {
     symbol: "Ac",
-    name: "Actinium",
+    englishName: "Actinium",
     koreanName: "악티늄",
     stableMass: 227,
     stableNeutrons: 138,
@@ -907,7 +907,7 @@ export const isotopeData: Record<number, {
   },
   90: {
     symbol: "Th",
-    name: "Thorium",
+    englishName: "Thorium",
     koreanName: "토륨",
     stableMass: 232,
     stableNeutrons: 142,
@@ -917,7 +917,7 @@ export const isotopeData: Record<number, {
   },
   91: {
     symbol: "Pa",
-    name: "Protactinium",
+    englishName: "Protactinium",
     koreanName: "프로트악티늄",
     stableMass: 231,
     stableNeutrons: 140,
@@ -927,7 +927,7 @@ export const isotopeData: Record<number, {
   },
   92: {
     symbol: "U",
-    name: "Uranium",
+    englishName: "Uranium",
     koreanName: "우라늄",
     stableMass: 238,
     stableNeutrons: 146,
@@ -937,7 +937,7 @@ export const isotopeData: Record<number, {
   },
   93: {
     symbol: "Np",
-    name: "Neptunium",
+    englishName: "Neptunium",
     koreanName: "넵투늄",
     stableMass: 237,
     stableNeutrons: 144,
@@ -947,7 +947,7 @@ export const isotopeData: Record<number, {
   },
   94: {
     symbol: "Pu",
-    name: "Plutonium",
+    englishName: "Plutonium",
     koreanName: "플루토늄",
     stableMass: 244,
     stableNeutrons: 150,
@@ -957,7 +957,7 @@ export const isotopeData: Record<number, {
   },
   95: {
     symbol: "Am",
-    name: "Americium",
+    englishName: "Americium",
     koreanName: "아메리슘",
     stableMass: 243,
     stableNeutrons: 148,
@@ -967,7 +967,7 @@ export const isotopeData: Record<number, {
   },
   96: {
     symbol: "Cm",
-    name: "Curium",
+    englishName: "Curium",
     koreanName: "큐륨",
     stableMass: 247,
     stableNeutrons: 151,
@@ -977,7 +977,7 @@ export const isotopeData: Record<number, {
   },
   97: {
     symbol: "Bk",
-    name: "Berkelium",
+    englishName: "Berkelium",
     koreanName: "버클륨",
     stableMass: 247,
     stableNeutrons: 150,
@@ -987,7 +987,7 @@ export const isotopeData: Record<number, {
   },
   98: {
     symbol: "Cf",
-    name: "Californium",
+    englishName: "Californium",
     koreanName: "캘리포늄",
     stableMass: 251,
     stableNeutrons: 153,
@@ -997,7 +997,7 @@ export const isotopeData: Record<number, {
   },
   99: {
     symbol: "Es",
-    name: "Einsteinium",
+    englishName: "Einsteinium",
     koreanName: "아인슈타이늄",
     stableMass: 252,
     stableNeutrons: 153,
@@ -1007,7 +1007,7 @@ export const isotopeData: Record<number, {
   },
   100: {
     symbol: "Fm",
-    name: "Fermium",
+    englishName: "Fermium",
     koreanName: "페르뮴",
     stableMass: 257,
     stableNeutrons: 157,
@@ -1017,7 +1017,7 @@ export const isotopeData: Record<number, {
   },
   101: {
     symbol: "Md",
-    name: "Mendelevium",
+    englishName: "Mendelevium",
     koreanName: "멘델레븀",
     stableMass: 258,
     stableNeutrons: 157,
@@ -1027,7 +1027,7 @@ export const isotopeData: Record<number, {
   },
   102: {
     symbol: "No",
-    name: "Nobelium",
+    englishName: "Nobelium",
     koreanName: "노벨륨",
     stableMass: 259,
     stableNeutrons: 157,
@@ -1037,7 +1037,7 @@ export const isotopeData: Record<number, {
   },
   103: {
     symbol: "Lr",
-    name: "Lawrencium",
+    englishName: "Lawrencium",
     koreanName: "로렌슘",
     stableMass: 266,
     stableNeutrons: 163,
@@ -1047,7 +1047,7 @@ export const isotopeData: Record<number, {
   },
   104: {
     symbol: "Rf",
-    name: "Rutherfordium",
+    englishName: "Rutherfordium",
     koreanName: "러더포듐",
     stableMass: 267,
     stableNeutrons: 163,
@@ -1057,7 +1057,7 @@ export const isotopeData: Record<number, {
   },
   105: {
     symbol: "Db",
-    name: "Dubnium",
+    englishName: "Dubnium",
     koreanName: "더브늄",
     stableMass: 268,
     stableNeutrons: 163,
@@ -1067,7 +1067,7 @@ export const isotopeData: Record<number, {
   },
   106: {
     symbol: "Sg",
-    name: "Seaborgium",
+    englishName: "Seaborgium",
     koreanName: "시보귬",
     stableMass: 269,
     stableNeutrons: 163,
@@ -1077,7 +1077,7 @@ export const isotopeData: Record<number, {
   },
   107: {
     symbol: "Bh",
-    name: "Bohrium",
+    englishName: "Bohrium",
     koreanName: "보륨",
     stableMass: 278,
     stableNeutrons: 171,
@@ -1087,7 +1087,7 @@ export const isotopeData: Record<number, {
   },
   108: {
     symbol: "Hs",
-    name: "Hassium",
+    englishName: "Hassium",
     koreanName: "하슘",
     stableMass: 271,
     stableNeutrons: 163,
@@ -1097,7 +1097,7 @@ export const isotopeData: Record<number, {
   },
   109: {
     symbol: "Mt",
-    name: "Meitnerium",
+    englishName: "Meitnerium",
     koreanName: "마이트너륨",
     stableMass: 282,
     stableNeutrons: 173,
@@ -1107,7 +1107,7 @@ export const isotopeData: Record<number, {
   },
   110: {
     symbol: "Ds",
-    name: "Darmstadtium",
+    englishName: "Darmstadtium",
     koreanName: "다름슈타튬",
     stableMass: 282,
     stableNeutrons: 172,
@@ -1117,7 +1117,7 @@ export const isotopeData: Record<number, {
   },
   111: {
     symbol: "Rg",
-    name: "Roentgenium",
+    englishName: "Roentgenium",
     koreanName: "뢴트게늄",
     stableMass: 286,
     stableNeutrons: 175,
@@ -1127,7 +1127,7 @@ export const isotopeData: Record<number, {
   },
   112: {
     symbol: "Cn",
-    name: "Copernicium",
+    englishName: "Copernicium",
     koreanName: "코페르니슘",
     stableMass: 285,
     stableNeutrons: 173,
@@ -1137,7 +1137,7 @@ export const isotopeData: Record<number, {
   },
   113: {
     symbol: "Nh",
-    name: "Nihonium",
+    englishName: "Nihonium",
     koreanName: "니호늄",
     stableMass: 286,
     stableNeutrons: 173,
@@ -1147,7 +1147,7 @@ export const isotopeData: Record<number, {
   },
   114: {
     symbol: "Fl",
-    name: "Flerovium",
+    englishName: "Flerovium",
     koreanName: "플레로븀",
     stableMass: 290,
     stableNeutrons: 176,
@@ -1157,7 +1157,7 @@ export const isotopeData: Record<number, {
   },
   115: {
     symbol: "Mc",
-    name: "Moscovium",
+    englishName: "Moscovium",
     koreanName: "모스코븀",
     stableMass: 290,
     stableNeutrons: 175,
@@ -1167,7 +1167,7 @@ export const isotopeData: Record<number, {
   },
   116: {
     symbol: "Lv",
-    name: "Livermorium",
+    englishName: "Livermorium",
     koreanName: "리버모륨",
     stableMass: 293,
     stableNeutrons: 177,
@@ -1177,7 +1177,7 @@ export const isotopeData: Record<number, {
   },
   117: {
     symbol: "Ts",
-    name: "Tennessine",
+    englishName: "Tennessine",
     koreanName: "테네신",
     stableMass: 294,
     stableNeutrons: 177,
@@ -1187,7 +1187,7 @@ export const isotopeData: Record<number, {
   },
   118: {
     symbol: "Og",
-    name: "Oganesson",
+    englishName: "Oganesson",
     koreanName: "오가네손",
     stableMass: 294,
     stableNeutrons: 176,

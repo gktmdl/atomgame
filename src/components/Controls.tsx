@@ -27,17 +27,21 @@ export function Controls({ proton, neutron, electron, setProton, setNeutron, set
       
       {/* Current Isotope Info */}
       <div className="bg-black/50 rounded-xl p-4 border border-gray-800">
-        <div className="flex flex-col mb-2">
-          <h2 className="text-3xl font-black text-white">{data?.symbol || "?"}-{proton + neutron}</h2>
-          <span className="text-xl font-bold text-gray-400">{data?.koreanName || "알 수 없음"} ({data?.name || "Unknown"})</span>
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-3 flex-wrap">
+            <h2 className="text-3xl font-black text-white">{data?.koreanName || "알 수 없음"}</h2>
+            <span className="inline-flex items-center rounded-full border border-blue-500/30 bg-blue-500/10 px-3 py-1 text-sm font-mono font-bold tracking-wider text-blue-300">
+              {data?.symbol || "?"}
+            </span>
+          </div>
         </div>
       </div>
 
       {/* Inputs */}
       <div className="space-y-4">
-        <ControlRow label="양성자 (Proton)" value={proton} onChange={setProton} onAdjust={(d) => handleAdjust(setProton, proton, d)} color="red" disabled={disabled} />
-        <ControlRow label="중성자 (Neutron)" value={neutron} onChange={setNeutron} onAdjust={(d) => handleAdjust(setNeutron, neutron, d)} color="gray" disabled={disabled} />
-        <ControlRow label="전자 (Electron)" value={electron} onChange={setElectron} onAdjust={(d) => handleAdjust(setElectron, electron, d)} color="blue" disabled={disabled} />
+        <ControlRow label="양성자" value={proton} onChange={setProton} onAdjust={(d) => handleAdjust(setProton, proton, d)} color="red" disabled={disabled} />
+        <ControlRow label="중성자" value={neutron} onChange={setNeutron} onAdjust={(d) => handleAdjust(setNeutron, neutron, d)} color="gray" disabled={disabled} />
+        <ControlRow label="전자" value={electron} onChange={setElectron} onAdjust={(d) => handleAdjust(setElectron, electron, d)} color="blue" disabled={disabled} />
       </div>
 
     </div>

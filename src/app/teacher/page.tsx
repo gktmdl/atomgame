@@ -53,7 +53,7 @@ export default function TeacherDashboard() {
           {/* Top Scores */}
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-xl">
             <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="text-yellow-400">🏅</span> 랭킹 (Top 20)
+              <span className="text-yellow-400">🏅</span> 랭킹 (상위 20)
             </h2>
             <div className="space-y-3 h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
               {scores.map((score, index) => (
@@ -64,7 +64,7 @@ export default function TeacherDashboard() {
                     </div>
                     <div>
                       <div className="font-bold">{score.playerName || score.guestId}</div>
-                      <div className="text-sm text-gray-400">{score.isotope} • {score.survivalTime.toFixed(1)}초 생존</div>
+                      <div className="text-sm text-gray-400">{score.elementName} • {score.isotope}</div>
                     </div>
                   </div>
                   <div className="font-black text-xl text-blue-400">
@@ -94,12 +94,12 @@ export default function TeacherDashboard() {
                         <span className="font-mono bg-black/50 px-2 py-0.5 rounded text-gray-400 mr-2">
                           p:{fail.proton} n:{fail.neutron} e:{fail.electron}
                         </span>
-                        {fail.isotope} ({fail.elementName}) 구성 후 붕괴
+                        {fail.elementName} • {fail.isotope} 구성 후 붕괴
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-sm text-gray-400">생존시간</div>
-                      <div className="font-bold text-white">{fail.survivalTime.toFixed(1)}s</div>
+                      <div className="text-sm text-gray-400">최종 점수</div>
+                      <div className="font-bold text-white">{fail.score.toLocaleString()}</div>
                     </div>
                   </div>
                 );

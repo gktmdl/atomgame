@@ -49,11 +49,11 @@ export function GameClient() {
           <h1 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-md">
             원자 안정성 시뮬레이터
           </h1>
-          <p className="text-gray-400 font-medium mt-1">Atomic Stability Survival</p>
+          <p className="text-gray-400 font-medium mt-1">교육용 과학 시뮬레이터</p>
         </div>
         <div className="flex items-center gap-6">
           <div className="text-right">
-            <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Player</div>
+            <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">플레이어</div>
             <div className="text-xl font-black text-blue-400">{playerName}</div>
           </div>
           <button
@@ -78,11 +78,7 @@ export function GameClient() {
               isPlaying={gameState.isPlaying}
             />
             
-            <div className="absolute top-6 left-6 right-6 flex justify-between items-start pointer-events-none">
-              <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700 pointer-events-auto">
-                <div className="text-sm text-gray-400 font-bold mb-1">생존 시간</div>
-                <div className="text-3xl font-black text-white tabular-nums tracking-wider">{gameState.survivalTime.toFixed(1)}s</div>
-              </div>
+            <div className="absolute top-6 left-6 right-6 flex justify-end items-start pointer-events-none">
               <div className="bg-black/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700 pointer-events-auto text-right">
                 <div className="text-sm text-gray-400 font-bold mb-1">현재 점수</div>
                 <div className="text-3xl font-black text-blue-400 tabular-nums">{gameState.score.toLocaleString()}</div>
@@ -107,14 +103,14 @@ export function GameClient() {
               disabled={gameState.isPlaying}
               className="bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-black text-2xl py-6 rounded-2xl shadow-[0_0_20px_rgba(37,99,235,0.4)] transition-all active:scale-95 border border-blue-400/50"
             >
-              START
+              시작
             </button>
             <button
               onClick={resetGame}
               disabled={!gameState.isPlaying && !gameState.isDead}
               className="bg-gray-800 hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-black text-2xl py-6 rounded-2xl shadow-lg transition-all active:scale-95 border border-gray-600"
             >
-              RESET
+              초기화
             </button>
           </div>
         </div>

@@ -181,7 +181,7 @@ const generateIsotopes = async () => {
       return {
         z: element.z,
         symbol: element.symbol,
-        name: element.name,
+        englishName: element.name,
         koreanName: element.koreanName,
         stableMass: element.z,
         stableNeutrons: 0,
@@ -204,7 +204,7 @@ const generateIsotopes = async () => {
     return {
       z: element.z,
       symbol: element.symbol,
-      name: element.name,
+      englishName: element.name,
       koreanName: element.koreanName,
       stableMass: choice.mass,
       stableNeutrons: choice.n,
@@ -224,7 +224,7 @@ const generateIsotopes = async () => {
     "",
     "export const isotopeData: Record<number, {",
     "  symbol: string;",
-    "  name: string;",
+    "  englishName: string;",
     "  koreanName: string;",
     "  stableMass: number;",
     "  stableNeutrons: number;",
@@ -237,7 +237,7 @@ const generateIsotopes = async () => {
   for (const entry of entries) {
     lines.push(`  ${entry.z}: {`);
     lines.push(`    symbol: "${entry.symbol}",`);
-    lines.push(`    name: "${entry.name}",`);
+    lines.push(`    englishName: "${entry.englishName}",`);
     lines.push(`    koreanName: "${entry.koreanName}",`);
     lines.push(`    stableMass: ${entry.stableMass},`);
     lines.push(`    stableNeutrons: ${entry.stableNeutrons},`);

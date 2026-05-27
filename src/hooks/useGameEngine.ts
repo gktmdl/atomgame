@@ -2,6 +2,13 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import { isotopeData } from "@/data/isotopes";
 import { GameState } from "@/types";
 import { useScores } from "./useScores";
+import {
+  applyScoreNoise,
+  calculateBaseScore,
+  calculateFinalLifetime,
+  calculateInstabilityMultiplier,
+  calculateScore,
+} from "@/lib/isotope-utils";
 
 export function useGameEngine() {
   const [gameState, setGameState] = useState<GameState>({
@@ -20,6 +27,7 @@ export function useGameEngine() {
   const requestRef = useRef<number>();
   const startTimeRef = useRef<number>(0);
   const targetLifetimeRef = useRef<number>(0);
+  const targetScoreRef = useRef<number>(0);
 
   // Automatically update neutrons when protons change, if not playing
   const setProton = useCallback((newProton: number) => {
@@ -59,9 +67,11 @@ export function useGameEngine() {
     let finalLifetime = 0;
     let message = "생존 중...";
     let initialDead = false;
-    let finalScore = 0;
 
     const data = isotopeData[gameState.proton];
+
+    targetLifetimeRef.current = 0;
+    targetScoreRef.current = 0;
 
     if (!data) {
       initialDead = true;
@@ -70,13 +80,16 @@ export function useGameEngine() {
       initialDead = true;
       message = "전하가 불안정하여 원자가 유지되지 못했습니다.";
     } else {
-      const baseLifetime = data.baseLifetimeSeconds || 0;
-      const instabilityMultiplier = Math.pow(3, Math.abs(gameState.neutron - data.stableNeutrons));
-      let calculatedLifetime = baseLifetime / instabilityMultiplier;
-      
-      // Add random noise (+/- 5%)
-      const noise = 1 + (Math.random() * 0.1 - 0.05);
-      finalLifetime = Math.max(0.1, calculatedLifetime * noise);
+      const instabilityMultiplier = calculateInstabilityMultiplier(
+        gameState.neutron,
+        data.stableNeutrons
+      );
+      finalLifetime = calculateFinalLifetime(
+        data.baseLifetimeSeconds || 0,
+        instabilityMultiplier
+      );
+      const baseScore = calculateBaseScore(data.halfLifeSeconds);
+      targetScoreRef.current = applyScoreNoise(baseScore);
 
       if (finalLifetime < 0.1) {
          initialDead = true;
@@ -101,7 +114,7 @@ export function useGameEngine() {
         proton: gameState.proton,
         neutron: gameState.neutron,
         electron: gameState.electron,
-        isotope: `${data?.symbol || "?"}-${gameState.proton + gameState.neutron}`,
+        isotope: data?.symbol || "?",
         elementName: data?.koreanName || "Unknown",
       });
       return;
@@ -140,10 +153,7 @@ export function useGameEngine() {
     if (elapsedSeconds >= targetLifetimeRef.current) {
       // Game Over
       const finalSurvival = targetLifetimeRef.current;
-      const factor = 12;
-      const finalScore = Math.floor(
-        1_000_000_000 * ((Math.exp(factor * finalSurvival / 30) - 1) / (Math.exp(factor) - 1))
-      );
+      const finalScore = targetScoreRef.current;
 
       const data = isotopeData[gameState.proton];
       
@@ -162,16 +172,16 @@ export function useGameEngine() {
         proton: gameState.proton,
         neutron: gameState.neutron,
         electron: gameState.electron,
-        isotope: `${data?.symbol || "?"}-${gameState.proton + gameState.neutron}`,
+        isotope: data?.symbol || "?",
         elementName: data?.koreanName || "Unknown",
       });
       return;
     }
 
-    // Still surviving
-    const factor = 12;
-    const currentScore = Math.floor(
-      1_000_000_000 * ((Math.exp(factor * elapsedSeconds / 30) - 1) / (Math.exp(factor) - 1))
+    const currentScore = calculateScore(
+      targetScoreRef.current,
+      elapsedSeconds,
+      targetLifetimeRef.current
     );
 
     setGameState((prev) => ({

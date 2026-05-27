@@ -8,7 +8,7 @@ export function Leaderboard() {
   return (
     <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 shadow-2xl h-[500px] flex flex-col">
       <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-        <span className="text-yellow-400">🏆</span> 실시간 랭킹 (Top 20)
+        <span className="text-yellow-400">🏆</span> 실시간 랭킹 (상위 20)
       </h2>
       <div className="flex-1 overflow-y-auto space-y-2 pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
         {scores.length === 0 ? (
@@ -22,7 +22,7 @@ export function Leaderboard() {
                 </span>
                 <div>
                   <div className="font-bold text-gray-200">{score.playerName || score.guestId}</div>
-                  <div className="text-xs text-gray-500">{score.isotope} ({score.elementName}) • {score.survivalTime.toFixed(1)}초 생존</div>
+                  <div className="text-xs text-gray-500">{score.elementName} • {score.isotope}</div>
                 </div>
               </div>
               <div className="text-right">

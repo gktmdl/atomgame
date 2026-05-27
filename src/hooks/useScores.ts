@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { collection, query, orderBy, limit, onSnapshot, addDoc } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { ScoreEntry } from "@/types";
+import { formatIsotopeLabel } from "@/lib/isotope-utils";
 
 const GUEST_ID_STORAGE_KEY = "atomgame-guest-id";
 
@@ -33,10 +34,14 @@ export function useScores() {
     );
 
     const unsubscribeScores = onSnapshot(scoresQuery, (snapshot) => {
-      const newScores = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as ScoreEntry[];
+      const newScores = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          ...data,
+          isotope: formatIsotopeLabel(String(data.isotope ?? "")),
+        } as ScoreEntry;
+      });
       setScores(newScores);
     });
 
@@ -48,10 +53,14 @@ export function useScores() {
     );
 
     const unsubscribeFails = onSnapshot(failsQuery, (snapshot) => {
-      const newFails = snapshot.docs.map(doc => ({
-        id: doc.id,
-        ...doc.data()
-      })) as ScoreEntry[];
+      const newFails = snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+          id: doc.id,
+          ...data,
+          isotope: formatIsotopeLabel(String(data.isotope ?? "")),
+        } as ScoreEntry;
+      });
       setRecentFails(newFails);
     });
 
@@ -67,6 +76,7 @@ export function useScores() {
     const createdAt = Date.now();
     const scorePayload = {
       ...entry,
+      isotope: formatIsotopeLabel(entry.isotope),
       guestId,
       playerName,
       createdAt,
