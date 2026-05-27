@@ -6,6 +6,7 @@ import { Controls } from "./Controls";
 import { Leaderboard } from "./Leaderboard";
 import { Login } from "./Login";
 import { useRouter } from "next/navigation";
+import { SITE_TITLE } from "@/lib/site-brand";
 
 export function GameClient() {
   const { gameState, setProton, setNeutron, setElectron, startGame, resetGame } = useGameEngine();
@@ -45,11 +46,11 @@ export function GameClient() {
   return (
     <div className="min-h-screen bg-black text-white font-sans overflow-x-hidden p-4 md:p-8 flex flex-col items-center">
       <header className="w-full max-w-6xl flex justify-between items-center mb-8">
-        <div>
-          <h1 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-md">
-            원자 안정성 시뮬레이터
+        <div className="min-w-0">
+          <h1 className="max-w-[16rem] sm:max-w-none text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-md">
+            {SITE_TITLE}
           </h1>
-          <p className="text-gray-400 font-medium mt-1">교육용 과학 시뮬레이터</p>
+          <p className="text-gray-400 font-medium mt-1">실제 동위원소 데이터를 기반으로 원자를 구성하는 교육용 시뮬레이션</p>
         </div>
         <div className="flex items-center gap-6">
           <div className="text-right">

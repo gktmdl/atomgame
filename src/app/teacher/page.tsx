@@ -2,6 +2,7 @@
 import React, { useMemo } from "react";
 import { useScores } from "@/hooks/useScores";
 import { isotopeData } from "@/data/isotopes";
+import { SITE_TITLE } from "@/lib/site-brand";
 import Link from "next/link";
 
 export default function TeacherDashboard() {
@@ -68,8 +69,8 @@ export default function TeacherDashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Top Scores */}
           <div className="bg-gray-900 border border-gray-800 rounded-2xl p-6 shadow-xl">
-            <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
-              <span className="text-yellow-400">🏅</span> 랭킹 (상위 20)
+            <h2 className="text-xl md:text-2xl font-bold leading-tight mb-6 flex items-center gap-2">
+              <span className="text-yellow-400">🏅</span> {SITE_TITLE} 랭킹 (상위 20)
             </h2>
             <div className="space-y-3 h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
               {scores.map((score, index) => (

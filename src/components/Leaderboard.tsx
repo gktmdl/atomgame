@@ -1,14 +1,15 @@
 "use client";
 import React from "react";
 import { useScores } from "@/hooks/useScores";
+import { SITE_TITLE } from "@/lib/site-brand";
 
 export function Leaderboard() {
   const { scores } = useScores();
 
   return (
     <div className="bg-gray-900/80 border border-gray-800 rounded-2xl p-6 shadow-2xl h-[500px] flex flex-col">
-      <h2 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-        <span className="text-yellow-400">🏆</span> 실시간 랭킹 (상위 20)
+      <h2 className="text-lg sm:text-xl font-bold leading-tight text-white mb-4 flex items-center gap-2">
+        <span className="text-yellow-400">🏆</span> {SITE_TITLE} 랭킹 (상위 20)
       </h2>
       <div className="flex-1 overflow-y-auto space-y-2 pr-2 scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent">
         {scores.length === 0 ? (

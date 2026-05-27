@@ -1,8 +1,9 @@
 import { GameClient } from "@/components/GameClient";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/site-brand";
 
 export const metadata = {
-  title: "원자 안정성 시뮬레이터",
-  description: "실제 동위원소 데이터 기반 교육용 원자 안정성 시뮬레이션 게임",
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
 };
 
 export default function Home() {

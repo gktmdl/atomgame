@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { SITE_TITLE } from "@/lib/site-brand";
 
 interface LoginProps {
   onLogin: (name: string) => void;
@@ -19,10 +20,10 @@ export function Login({ onLogin }: LoginProps) {
     <div className="fixed inset-0 z-[1000] flex items-center justify-center bg-black/90 backdrop-blur-xl p-4">
       <div className="w-full max-w-md bg-gray-900 border border-blue-500/30 rounded-3xl p-8 shadow-[0_0_50px_rgba(59,130,246,0.2)]">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-black bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent mb-2">
-            ATOM GAME
+          <h1 className="text-3xl sm:text-4xl font-black leading-tight tracking-tight bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent mb-2">
+            {SITE_TITLE}
           </h1>
-          <p className="text-gray-400">원자 안정성 시뮬레이터에 입장하세요</p>
+          <p className="text-gray-400">원자 만들기 시뮬레이션에 입장하세요</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
