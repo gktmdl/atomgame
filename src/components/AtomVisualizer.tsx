@@ -27,13 +27,13 @@ export function AtomVisualizer({ proton, neutron, electron, isDead, isPlaying }:
     const total = proton + neutron;
     
     // Golden spiral in 3D-ish space for better packing
-    const spacing = 14; 
+    const spacing = 6; 
     const phi = (Math.sqrt(5) + 1) / 2;
 
     for (let i = 0; i < total; i++) {
       const type = i < proton ? "proton" : "neutron";
       
-      // Vogel's model for disk packing
+      // Vogel's model for disk packing - more compact
       const r = Math.sqrt(i + 0.5) * spacing;
       const theta = 2 * Math.PI * i / (phi * phi);
       

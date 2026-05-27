@@ -13,6 +13,11 @@ export default function TeacherDashboard() {
 
   const topScore = scores.length > 0 ? scores[0].score : 0;
 
+  const handleLogout = () => {
+    localStorage.removeItem("atom_player_name");
+    window.location.href = "/";
+  };
+
   return (
     <div className="min-h-screen bg-gray-950 text-white font-sans overflow-x-hidden p-4 md:p-8">
       <header className="w-full max-w-6xl mx-auto flex justify-between items-center mb-8">
@@ -22,9 +27,17 @@ export default function TeacherDashboard() {
           </h1>
           <p className="text-gray-400 font-medium mt-1">실시간 학생 플레이 현황</p>
         </div>
-        <Link href="/" className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-xl font-bold transition-colors border border-gray-700">
-          게임 화면으로
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/" className="px-6 py-2 bg-gray-800 hover:bg-gray-700 rounded-xl font-bold transition-colors border border-gray-700">
+            게임 화면으로
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="px-6 py-2 bg-red-900/20 hover:bg-red-900/40 text-red-400 rounded-xl font-bold transition-colors border border-red-900/50"
+          >
+            로그아웃
+          </button>
+        </div>
       </header>
 
       <main className="w-full max-w-6xl mx-auto space-y-8">

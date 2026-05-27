@@ -33,6 +33,11 @@ export function GameClient() {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("atom_player_name");
+    setPlayerName(null);
+  };
+
   if (!playerName) {
     return <Login onLogin={handleLogin} />;
   }
@@ -46,9 +51,17 @@ export function GameClient() {
           </h1>
           <p className="text-gray-400 font-medium mt-1">Atomic Stability Survival</p>
         </div>
-        <div className="text-right">
-          <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Player</div>
-          <div className="text-xl font-black text-blue-400">{playerName}</div>
+        <div className="flex items-center gap-6">
+          <div className="text-right">
+            <div className="text-sm text-gray-500 font-bold uppercase tracking-wider">Player</div>
+            <div className="text-xl font-black text-blue-400">{playerName}</div>
+          </div>
+          <button
+            onClick={handleLogout}
+            className="px-4 py-2 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-xl text-sm font-bold transition-colors border border-gray-700"
+          >
+            로그아웃
+          </button>
         </div>
       </header>
 

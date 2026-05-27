@@ -72,6 +72,7 @@ function ControlRow({ label, value, onChange, onAdjust, color, disabled }: { lab
           type="number" 
           value={value} 
           onChange={(e) => onChange(parseInt(e.target.value) || 0)} 
+          onFocus={(e) => e.target.select()}
           disabled={disabled}
           className={`w-20 h-10 bg-black/50 border border-gray-700 rounded-lg text-center font-bold text-lg focus:outline-none focus:ring-2 transition-all disabled:opacity-50 ${colorClasses}`}
         />

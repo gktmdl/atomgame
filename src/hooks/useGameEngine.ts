@@ -140,8 +140,9 @@ export function useGameEngine() {
     if (elapsedSeconds >= targetLifetimeRef.current) {
       // Game Over
       const finalSurvival = targetLifetimeRef.current;
+      const factor = 12;
       const finalScore = Math.floor(
-        1_000_000_000 * ((Math.exp(5 * finalSurvival / 30) - 1) / (Math.exp(5) - 1))
+        1_000_000_000 * ((Math.exp(factor * finalSurvival / 30) - 1) / (Math.exp(factor) - 1))
       );
 
       const data = isotopeData[gameState.proton];
@@ -168,8 +169,9 @@ export function useGameEngine() {
     }
 
     // Still surviving
+    const factor = 12;
     const currentScore = Math.floor(
-      1_000_000_000 * ((Math.exp(5 * elapsedSeconds / 30) - 1) / (Math.exp(5) - 1))
+      1_000_000_000 * ((Math.exp(factor * elapsedSeconds / 30) - 1) / (Math.exp(factor) - 1))
     );
 
     setGameState((prev) => ({

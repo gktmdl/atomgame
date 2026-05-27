@@ -40,8 +40,9 @@ export const calculateFinalLifetime = (
 
 export const calculateScore = (survivalTimeSeconds: number) => {
   const t = clamp(survivalTimeSeconds, 0, 30);
-  const numerator = Math.exp((5 * t) / 30) - 1;
-  const denominator = Math.exp(5) - 1;
+  const factor = 12;
+  const numerator = Math.exp((factor * t) / 30) - 1;
+  const denominator = Math.exp(factor) - 1;
   return Math.floor(1_000_000_000 * (numerator / denominator));
 };
 
