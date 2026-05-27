@@ -6,6 +6,7 @@ const clamp = (value: number, min: number, max: number) =>
 const SCORE_MAX_VALUE = 1_000_000_000;
 const SCORE_REFERENCE_SECONDS = 30;
 const SCORE_CURVE_EXPONENT = 3;
+const POISSON_NOISE_LAMBDA = 400;
 
 export const getIsotope = (proton: number) => isotopeData[proton];
 
@@ -35,19 +36,32 @@ export const calculateInstabilityMultiplier = (
   return Math.pow(3, delta);
 };
 
-const gaussianNoise = () => {
-  let u = 0;
-  let v = 0;
-  while (u === 0) u = Math.random();
-  while (v === 0) v = Math.random();
-  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+const samplePoisson = (lambda: number) => {
+  if (!Number.isFinite(lambda) || lambda <= 0) return 0;
+
+  const threshold = Math.exp(-lambda);
+  let product = 1;
+  let count = 0;
+
+  do {
+    count += 1;
+    product *= Math.random();
+  } while (product > threshold);
+
+  return count - 1;
+};
+
+const poissonNoise = (stdDev: number) => {
+  const sample = samplePoisson(POISSON_NOISE_LAMBDA);
+  const normalized = (sample - POISSON_NOISE_LAMBDA) / Math.sqrt(POISSON_NOISE_LAMBDA);
+  return normalized * stdDev;
 };
 
 export const calculateFinalLifetime = (
   baseLifetimeSeconds: number,
   instabilityMultiplier: number
 ) => {
-  const noise = clamp(gaussianNoise() * 0.02, -0.05, 0.05);
+  const noise = poissonNoise(0.05);
   const adjusted = baseLifetimeSeconds / Math.max(instabilityMultiplier, 1);
   return Math.max(0, adjusted * (1 + noise));
 };
