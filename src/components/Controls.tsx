@@ -14,7 +14,7 @@ interface ControlsProps {
   isDead: boolean;
 }
 
-export function Controls({ proton, neutron, electron, setProton, setNeutron, setElectron, isPlaying, isDead }: ControlsProps) {
+function ControlsComponent({ proton, neutron, electron, setProton, setNeutron, setElectron, isPlaying, isDead }: ControlsProps) {
   const data = isotopeData[proton];
   const displayName = data
     ? formatChargedAtomLabel(data.koreanName, proton, electron)
@@ -54,6 +54,8 @@ export function Controls({ proton, neutron, electron, setProton, setNeutron, set
     </div>
   );
 }
+
+export const Controls = React.memo(ControlsComponent);
 
 function ControlRow({ label, value, onChange, onAdjust, color, disabled }: { label: string, value: number, onChange: (v: number) => void, onAdjust: (d: number) => void, color: "red" | "gray" | "blue", disabled: boolean }) {
   const colorClasses = {

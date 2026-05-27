@@ -4,7 +4,7 @@ import { useScores } from "@/hooks/useScores";
 import { SITE_TITLE } from "@/lib/site-brand";
 import { formatChargedAtomLabel } from "@/lib/isotope-utils";
 
-export function Leaderboard() {
+function LeaderboardComponent() {
   const { scores } = useScores();
 
   return (
@@ -50,3 +50,5 @@ export function Leaderboard() {
     </div>
   );
 }
+
+export const Leaderboard = React.memo(LeaderboardComponent);

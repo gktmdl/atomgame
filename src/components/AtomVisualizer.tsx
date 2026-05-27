@@ -20,7 +20,7 @@ interface ElectronState {
   driftY: number;
 }
 
-export function AtomVisualizer({ proton, neutron, electron, isDead, isPlaying }: AtomVisualizerProps) {
+function AtomVisualizerComponent({ proton, neutron, electron, isDead, isPlaying }: AtomVisualizerProps) {
   // Nucleus Packing - Using a more spread out cluster approach
   const nucleusParticles = useMemo(() => {
     const total = proton + neutron;
@@ -183,3 +183,5 @@ export function AtomVisualizer({ proton, neutron, electron, isDead, isPlaying }:
     </div>
   );
 }
+
+export const AtomVisualizer = React.memo(AtomVisualizerComponent);
