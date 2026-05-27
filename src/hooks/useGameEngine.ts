@@ -18,7 +18,7 @@ export function useGameEngine() {
     proton: 1,
     neutron: 0,
     electron: 1,
-    statusMessage: "원자를 구성하고 START를 누르세요.",
+    statusMessage: "원자를 구성하고 시작을 누르세요.",
     isDead: false,
   });
 
@@ -39,7 +39,7 @@ export function useGameEngine() {
       proton: clamped,
       neutron: data ? data.stableNeutrons : prev.neutron,
       // Removed electron synchronization for educational purposes
-      statusMessage: "원자를 구성하고 START를 누르세요.",
+      statusMessage: "원자를 구성하고 시작을 누르세요.",
     }));
   }, [gameState.isPlaying, gameState.isDead]);
 
@@ -48,7 +48,7 @@ export function useGameEngine() {
     setGameState((prev) => ({
       ...prev,
       neutron: Math.max(0, newNeutron),
-      statusMessage: "원자를 구성하고 START를 누르세요.",
+      statusMessage: "원자를 구성하고 시작을 누르세요.",
     }));
   }, [gameState.isPlaying, gameState.isDead]);
 
@@ -57,7 +57,7 @@ export function useGameEngine() {
     setGameState((prev) => ({
       ...prev,
       electron: Math.max(0, newElectron),
-      statusMessage: "원자를 구성하고 START를 누르세요.",
+      statusMessage: "원자를 구성하고 시작을 누르세요.",
     }));
   }, [gameState.isPlaying, gameState.isDead]);
 
@@ -148,7 +148,7 @@ export function useGameEngine() {
       isDead: false,
       score: 0,
       survivalTime: 0,
-      statusMessage: "원자를 구성하고 START를 누르세요.",
+      statusMessage: "원자를 구성하고 시작을 누르세요.",
     }));
     if (requestRef.current) {
       cancelAnimationFrame(requestRef.current);

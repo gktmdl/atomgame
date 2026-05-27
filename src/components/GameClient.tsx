@@ -50,7 +50,7 @@ export function GameClient() {
           <h1 className="max-w-[16rem] sm:max-w-none text-2xl sm:text-3xl md:text-4xl font-black leading-tight tracking-tight bg-gradient-to-r from-blue-400 to-indigo-600 bg-clip-text text-transparent drop-shadow-md">
             {SITE_TITLE}
           </h1>
-          <p className="text-gray-400 font-medium mt-1">실제 동위원소 데이터를 기반으로 원자를 구성하는 교육용 시뮬레이션</p>
+          <p className="text-gray-400 font-medium mt-1">안정한 원자를 만들고 관찰하기</p>
         </div>
         <div className="flex items-center gap-6">
           <div className="text-right">
